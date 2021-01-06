@@ -1,0 +1,63 @@
+
+<!-- 顶部 -->
+<view class="banner"></view>
+
+<!-- 搜索框 -->
+<input type="text" class="inp" placeholder="请输入关键词,企业名称或者品牌"></input>
+
+<!-- 选项卡 -->
+<view class="tab">
+    <view class="tabO" bindtap='tab1'>
+        <span class="tabFont">推荐</span>
+        <span class="tabBottom" tt:if={{tab}}></span>
+    </view>
+    <view class="tabT" bindtap='tab2'>
+        <span class="tabFont">最新</span>
+        <span class="tabBottom" tt:if={{!tab}}></span>
+    </view>
+</view>
+
+<!-- 推荐 -->
+<view tt:if={{tab}} class="content">
+    <view class="list">
+        <view class="title">
+            <span class="tit"><span class="hot">热点</span>标标题标题标题标题标题标题标题标标题标题标标题标题标题标题标题标题标题题</span>
+        </view>
+        <view class="main">
+            标标题标题标题标题标题标题标题标标题标标题标标标题标标标题标标题标标题标题标题标题标题标题标
+        </view>
+        <view class="img">
+            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+        </view>
+        <view class="time">
+            <span>721</span>
+            <span>30</span>
+            <span>2020-02-05</span>
+        </view>
+    </view>
+    <view class="list">
+        <view class="title">
+            <span class="tit"><span class="hot">热点</span>标标题标题标题标题标题标题标题标标题标题标标题标题标题标题标题标题标题题</span>
+        </view>
+        <view class="main">
+            标标题标题标题标题标题标题标题标标题标标题标标标题标标标题标标题标标题标题标题标题标题标题标
+        </view>
+        <view class="img">
+            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+        </view>
+        <view class="time">
+            <span>721</span>
+            <span>30</span>
+            <span>2020-02-05</span>
+        </view>
+    </view>
+</view>
+
+<!-- 最新 -->
+<view tt:if={{!tab}}>
+    data2
+</view>

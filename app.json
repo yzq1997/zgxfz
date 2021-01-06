@@ -1,0 +1,52 @@
+{
+    "pages": [
+        "pages/qtts/index",
+        "pages/index/index",
+        "pages/ts/index",
+        "pages/ppts/index",
+        "pages/hyts/index",
+        "pages/qtts_list/index",
+        "pages/detail/index"
+
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Mini Program",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "text": "首页",
+                "pagePath": "pages/index/index",
+                "iconPath": "./image/home.png",
+                "selectedIconPath": "./image/home1.png"
+            },
+            {
+                "text": "群体投诉",
+                "pagePath": "pages/qtts/index",
+                "iconPath": "./image/dy.png",
+                "selectedIconPath": "./image/dy1.png"
+            },
+            {
+                "text": "投诉",
+                "pagePath": "pages/ts/index",
+                "iconPath": "./image/qrcode.jpg",
+                "selectedIconPath": "./image/qrcode.jpg"
+            },
+            {
+                "text": "品牌投诉",
+                "pagePath": "pages/ppts/index",
+                "iconPath": "./image/dy.png",
+                "selectedIconPath": "./image/dy1.png"
+            },
+            {
+                "text": "行业投诉",
+                "pagePath": "pages/hyts/index",
+                "iconPath": "./image/dy.png",
+                "selectedIconPath": "./image/dy1.png"
+            }
+        ]
+    }
+}

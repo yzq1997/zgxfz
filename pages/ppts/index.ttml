@@ -1,0 +1,21 @@
+<view class="tab"> 
+    <span>全部</span>
+    <span>金融</span>
+    <span>手机数码</span>
+    <span>食品饮料</span>
+    <span>母婴玩具</span>
+    <span>住宅</span>
+    <span>旅游</span>
+    <span>日用家电</span>
+    <span>化妆</span>
+    <span>医疗保健</span>
+    <span>餐饮</span>
+    <span>水电气</span>
+    <span>快递物流</span>
+    <span>电商</span>
+    <span>运营商</span>
+    <span>汽车</span>
+    <span>其他</span>
+</view>
+
+<view style="display: none">88</view>

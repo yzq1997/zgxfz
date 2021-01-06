@@ -1,0 +1,60 @@
+<view class="box">
+    <button class="btn_1" bindtap='webcon'>网上消费</button>
+    <button class="btn_2" bindtap='supcon'>店铺消费</button>
+    <button class="btn_3" bindtap='shop'>电视购物</button>
+    <view class="dan">
+        <radio value="ds" checked={{flag}} bindtap='toList'/>
+        <span>同意<span class="xfz"  bindtap='agreement'>消费者协会投诉协议</span></span>
+    </view>
+    
+</view>
+
+<view class="zzc" tt:if={{zzc}} bindtap='zzc'>
+    <view class="agrBox">
+        <view class="arg_1">消费者维权的五条途径</view>
+        <view class="">《消费者权益保护法》第三十九条 消费者和经营者发生消费者权益争议的，可以通过下列途径解决：</view>
+        <view class="">（一）与经营者协商和解；</view>
+        <view class="">（二）请求消费者协会或者依法成立的其他调解组织调解；</view>
+        <view class="">（三）向有关行政部门投诉；</view>
+        <view class="">（四）根据与经营者达成的仲裁协议提请仲裁机构仲裁；</view>
+        <view class="">（五）向人民法院提起诉讼。</view>
+        <view class="">以上五条途径是平行关系，消费者可以任选其一。</view>
+        <view class="arg_1">中国消费者微信平台投诉须知</view>
+        <view class="">第一条 为进一步规范处理消费投诉工作，依据《中华人民共和国消费者权益保护法》（以下简称《消法》）、《江苏省实施〈中华人民共和国消费者权益保护法〉办法》（以下简称《实施办法》及《中消协投诉受理导则》（以下简称《导则》）的规定，特制定本流程规范。第二条 消费者可通过该平台进行投诉，由消费者提供投诉材料及购物或接受服务的凭证。 投诉材料应包括以下内容：</view>
+        <view class="">（一）投诉方和被投诉方的基本信息，包括投诉方的姓名、身份证号码、地址、邮政编码（？）、联系电话等；被投诉方的单位名称、地址、邮政编码（？）、联系人、联系电话等。</view>
+        <view class="">（二）损害事实发生的时间、地点、过程及与经营者协商的情况。</view>
+        <view class="">（三）有关证据。消费者应提供与投诉有关的证据，证明购买、使用商品或接受服务与受损害存在因果关系，法律法规另有规定的除外。消费者协会一般不留存争议双方提供的原始证据（原件、实物等）。</view>
+        <view class="">（四）明确、具体的诉求。</view>
+        <view class="">第三条 有下列情况之一的投诉，不予受理：</view>
+        <view class="">（一）有确切证据证明不是为生活消费需要购买、使用商品或者接受服务的；</view>
+        <view class="">（二）没有明确的诉求或者没有真实准确的被投诉方的;</view>
+        <view class="">(三)经营者之间因购销活动产生纠纷的；</view>
+        <view class="">(四)因投资、经营、技术转让、再生产等以营利为目的活动引发争议的；</view>
+        <view class="">（五）公民个人之间私下交易或通过非法渠道购买商品或者接受服务的；</view>
+        <view class="">（六）消费者对投诉商品或者服务的瑕疵在购买或者接受服务之前，已经知道存在该瑕疵，且该瑕疵不违反法律强制性规定的；</view>
+        <view class="">（七）消费者不能提供必要证据的;</view>
+        <view class="">(八)消费者未按产品使用说明安装、使用、保管或自行拆动而导致产品损坏或人身、财产损害的；</view>
+        <view class="">（九）争议双方曾在消费者协会调解下达成调解协议并已履行，且无新情况、新理由、新证据的；</view>
+        <view class="">（十）法律、法规或政策明确规定应由指定部门处理的；</view>
+        <view class="">（十一）法院、仲裁机构或有关行政部门已经受理的；</view>
+        <view class="">（十二）其他不符合有关法律、法规规定的;</view>
+        <view class="">（十三）以匿名方式进行投诉的。</view>
+        <view class="">第四条 系统在收到投诉材料之日起将投诉情况登记在册，立即将投诉转交被投诉方，被投诉方在七个工作日内与投诉方进行联系。</view>
+        <view class="">第五条 投诉方与被投诉方通过本平台或电话、电子邮件等方式商讨解决方案。</view>
+        <view class="">第六条 被投诉方所在地消费者协会全程监督双方协商过程，并参与重点案件的调解。</view>
+        <view class="">第七条 投诉方和被投诉方不能协商解决的投诉，经双方一致同意，提请消费者协会进行调解。</view>
+        <view class="">第八条 投诉方同意所发起投诉信息将或曝光(平台监督下将保护您的个人信息)。</view>
+        <view class="">好的</view>
+        <view class="btnbox">
+            <span class="btnt" bindtap='btnt'>同意</span>
+            <span class="btnf" bindtap='btnt'>不同意</span>
+        </view>
+    </view>
+</view>
+
+<view class="zzct" tt:if={{zzct}}>
+    <view class="zzctbox">
+        <view class="xy">请先同意消费者协会投诉协议</view>
+        <view class="xybtn" bindtap='zzct'>确定</view>
+    </view>
+</view>

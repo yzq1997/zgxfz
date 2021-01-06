@@ -1,0 +1,16 @@
+.tab{
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  width: auto;
+  overflow-x: scroll;
+}
+.tab>span{
+  height: 30px;
+  line-height: 30px;
+  /* background: pink; */
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right:10px;
+  border-bottom: 2px solid red
+}

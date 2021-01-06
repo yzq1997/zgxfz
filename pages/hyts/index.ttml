@@ -1,0 +1,69 @@
+<view class="tab"> 
+    <span>金融</span>
+    <span>手机数码</span>
+    <span>食品饮料</span>
+    <span>母婴玩具</span>
+    <span>住宅</span>
+    <span>旅游</span>
+    <span>日用家电</span>
+    <span>化妆</span>
+    <span>医疗保健</span>
+    <span>餐饮</span>
+    <span>水电气</span>
+    <span>快递物流</span>
+    <span>电商</span>
+    <span>运营商</span>
+    <span>汽车</span>
+    <span>其他</span>
+</view>
+
+<view class="list">
+    <view class="listbox">
+        <view class="top">
+            <view class="topleft">
+                <view class="title">标标题标题标题标题题标题题标题题标题题标题题</view>
+                <view class="main">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+            </view>
+            <view class="topright" tt:if={{leftImg}}>
+                <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            </view>
+        </view>
+
+        <view class="center" tt:if={{centerImg}}>
+            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+        </view>
+
+        <view class="foot">
+            <span>152</span>
+            <span>51</span>
+            <span>2020-20-02</span>
+        </view>
+    </view>
+
+    <view class="listbox">
+        <view class="top">
+            <view class="topleft">
+                <view class="title">标标题标题标题标题题标题题标题题标题题标题题</view>
+                <view class="main">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+            </view>
+            <view class="topright" tt:if={{leftImg}}>
+                <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            </view>
+        </view>
+
+        <view class="center" tt:if={{centerImg}}>
+            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+        </view>
+
+        <view class="foot">
+            <span>152</span>
+            <span>51</span>
+            <span>2020-20-02</span>
+        </view>
+    </view>
+</view>
+

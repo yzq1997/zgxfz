@@ -1,0 +1,28 @@
+<view class="box">
+    <view class="title" bindtap='toList'>
+        <span class="tit">撒上单阿三打阿萨阿萨实打实打算撒打撒打大苏打啊</span>
+        <view class="name">
+            <span>曝光主体</span>
+            <span>某某某</span>
+        </view>
+        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+        <view class="time">
+            <span>480</span>
+            <span>50</span>
+            <span>2020-20-20</span>
+        </view>
+    </view>
+    <view class="title">
+        <span class="tit">撒上单阿三打阿萨阿萨实打实打算撒打撒打大苏打啊</span>
+        <view class="name">
+            <span>曝光主体</span>
+            <span>某某某</span>
+        </view>
+        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+        <view class="time">
+            <span>480</span>
+            <span>50</span>
+            <span>2020-20-20</span>
+        </view>
+    </view>
+</view>
