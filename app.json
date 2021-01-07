@@ -6,7 +6,8 @@
         "pages/ppts/index",
         "pages/hyts/index",
         "pages/qtts_list/index",
-        "pages/detail/index"
+        "pages/detail/index",
+        "pages/ts_data/index"
 
     ],
     "window": {

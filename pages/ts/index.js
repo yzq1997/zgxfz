@@ -4,7 +4,8 @@ Page({
     data: {
         flag: true,
         zzc: false,
-        zzct:false
+        zzct:false,
+        num:1
     },
     //单选框
     toList() {
@@ -44,15 +45,34 @@ Page({
             this.setData({
                 zzct:true
             });
+            return false;
         }
+
+        tt.reLaunch({
+            url: `../ts_data/index?sky=${this.data.num}`,
+            success(res) {
+                console.log(res);
+            },
+            fail(res) {
+                console.log(`reLaunch调用失败`);
+            }
+        });
     },
     //点击按钮店铺消费
     supcon(){
-
+        if(this.data.flag == false){
+            this.setData({
+                zzct:true
+            });
+        }
     },
     //点击按钮电视购物
     shop(){
-
+        if(this.data.flag == false){
+            this.setData({
+                zzct:true
+            });
+        }
     },
     //点击确定按钮
     zzct(){

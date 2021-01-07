@@ -47,7 +47,7 @@
         <view class="">好的</view>
         <view class="btnbox">
             <span class="btnt" bindtap='btnt'>同意</span>
-            <span class="btnf" bindtap='btnt'>不同意</span>
+            <span class="btnf" bindtap='btnf'>不同意</span>
         </view>
     </view>
 </view>

@@ -12,7 +12,7 @@
   font-size: 16px;
   padding-left: 10px;
   padding-right:10px;
-  border-bottom: 2px solid red
+  border-bottom: 2px solid red;
 }
 .listbox{
     padding: 10px 10px;

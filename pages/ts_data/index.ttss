@@ -1,0 +1,131 @@
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    border-bottom: 1px solid #eee;
+    height: 50px;
+    /* position: relative; */
+}
+.tabFont{
+    font-size: 16px;
+    font-family: PingFang-SC-Regular;
+    height: 48px;
+}
+.tabO,.tabT,.tabH{
+    position: relative;
+    width: auto;
+}
+.tabBottom{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: skyblue;
+    position: absolute;
+    bottom: -12px;
+}
+
+.userdata{
+    width: 100%;
+    height: 50px;
+    background: #F5F5F9;
+    line-height: 50px;
+    font-size: 16px;
+    color: #999;
+    padding-left: 5%;
+    font-family: PingFang;
+}
+.userBox{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-left: 5%;
+}
+.gmpt{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    font-size: 16px;
+    font-family: PingFang;
+    border-bottom: 1px solid #eee;
+}
+.input1{
+    margin-left: 20px;
+}
+.bx{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+}
+.picker{
+    color: #999;
+}
+.dpxs{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    /* background-image: url(../../image/right.png) no-repeat; */
+}
+.dpxs>image{
+    position: absolute;
+    right: 20px;
+    width: 40rpx;
+    height: 40rpx;
+}
+.ds{
+    color: #999;
+}
+.textarea{
+    font-size: 16px;
+    font-family: PingFang;
+    padding-top: 10rpx;
+}
+.tsbox{
+    display: flex;
+    align-items: center;
+    height: 200rpx;
+}
+.tsbox>button{
+    padding: 0;
+    width: 15%;
+    font-size: 32rpx;
+    font-family: PingFang;
+}
+.ts_btn{
+    color: #999;
+    border: 1px solid #eee;
+    background: #fff;
+}
+.tybtn{
+    color: red;
+    border: 1px solid red;
+    background: #fff;
+}
+.photo{
+    display: flex;
+    padding-top: 10rpx;
+}
+.photobtn{
+    width: 200rpx;
+    height: 200rpx;
+    background: pink;
+    padding:0;
+    margin: 0;
+}
+.imgbox{
+    display: flex;
+    align-items: center;
+}
+.imgbox>image{
+    width: 200rpx;
+    height: 200rpx;
+    padding: 0;
+    
+}
+.phone1{
+    width: 35%;
+}
+.yzm{
+    height: 80rpx;
+    font-size: 16px;
+    font-family: PingFang;
+}
