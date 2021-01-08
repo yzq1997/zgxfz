@@ -11,6 +11,13 @@
     font-size: 16px;
     font-family: PingFang-SC-Regular;
     height: 48px;
+    color: black;
+}
+.tabFontT{
+    font-size: 16px;
+    font-family: PingFang-SC-Regular;
+    height: 48px;
+    color: skyblue;
 }
 .tabO,.tabT,.tabH{
     position: relative;
@@ -86,7 +93,7 @@
 }
 .tsbox>button{
     padding: 0;
-    width: 15%;
+    width: 20%;
     font-size: 32rpx;
     font-family: PingFang;
 }
@@ -119,7 +126,6 @@
     width: 200rpx;
     height: 200rpx;
     padding: 0;
-    
 }
 .phone1{
     width: 35%;
@@ -128,4 +134,17 @@
     height: 80rpx;
     font-size: 16px;
     font-family: PingFang;
+}
+.submit{
+    background: #FF3A31;
+    border: none;
+    border-radius: 10rpx;
+    margin-top: 30rpx;
+    margin-bottom: 20rpx;
+    width: 80%;
+    color: #fff;
+    margin-left: 10%;
+}
+.yzmnum{
+    width: 144rpx;
 }

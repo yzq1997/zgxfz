@@ -5,7 +5,9 @@ Page({
         flag: true,
         zzc: false,
         zzct:false,
-        num:1
+        num1:1,
+        num2:2,
+        num3:3
     },
     //单选框
     toList() {
@@ -49,7 +51,7 @@ Page({
         }
 
         tt.reLaunch({
-            url: `../ts_data/index?sky=${this.data.num}`,
+            url: `../ts_data/index?sky=${this.data.num1}`,
             success(res) {
                 console.log(res);
             },
@@ -64,7 +66,17 @@ Page({
             this.setData({
                 zzct:true
             });
-        }
+            return false
+        };
+        tt.reLaunch({
+            url: `../ts_data/index?sky=${this.data.num2}`,
+            success(res) {
+                console.log(res);
+            },
+            fail(res) {
+                console.log(`reLaunch调用失败`);
+            }
+        });
     },
     //点击按钮电视购物
     shop(){
@@ -72,7 +84,17 @@ Page({
             this.setData({
                 zzct:true
             });
-        }
+            return false
+        };
+        tt.reLaunch({
+            url: `../ts_data/index?sky=${this.data.num3}`,
+            success(res) {
+                console.log(res);
+            },
+            fail(res) {
+                console.log(`reLaunch调用失败`);
+            }
+        });
     },
     //点击确定按钮
     zzct(){

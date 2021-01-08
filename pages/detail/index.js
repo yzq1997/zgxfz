@@ -1,12 +1,12 @@
 const app = getApp()
 
 Page({
-  data: {
+    data: {
 
-  },
-  onLoad: function (e) {
-      console.log(e);
-    // console.log('Welcome to Mini Code')
-  },
-  
+    },
+    onLoad: function (e) {
+        console.log(e);
+        // console.log('Welcome to Mini Code')
+    },
+
 })

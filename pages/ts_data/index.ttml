@@ -1,31 +1,31 @@
 <view class="box">
     <view class="tab">
         <view class="tabO" bindtap='tab1'>
-            <span class="tabFont">网上消费</span>
+            <span class="{{tab1? 'tabFontT' : 'tabFont'}}">网上消费</span>
             <span class="tabBottom" tt:if={{tab1}}></span>
         </view>
         <view class="tabT" bindtap='tab2'>
-            <span class="tabFont">实体店消费</span>
+            <span class="{{tab2? 'tabFontT' : 'tabFont'}}">实体店消费</span>
             <span class="tabBottom" tt:if={{tab2}}></span>
         </view>
         <view class="tabH" bindtap='tab3'>
-            <span class="tabFont">电视购物</span>
+            <span class="{{tab3? 'tabFontT' : 'tabFont'}}">电视购物</span>
             <span class="tabBottom" tt:if={{tab3}}></span>
         </view>
     </view>
 
     
-
-    <view class="">
+    
+    <view class="" tt:if={{tab1}}>
         <view class="userdata">基本信息</view>
         <view class="userBox">
             <view class="gmpt">
                 <span class="">购买平台<span class="bx">*</span></span>
-                <input class="input1" type="text" value="" placeholder="请输入购买平台"/>
+                <input class="input1" bindblur="handleBlur1" type="text" value="" placeholder="请输入购买平台"/>
             </view>
             <view class="gmpt">
                 <span class="">店铺名称<span class="bx">*</span></span>
-                <input class="input1" type="text" value="" placeholder="请输入店铺名称"/>
+                <input class="input1" bindblur="handleBlur2" type="text" value="" placeholder="请输入店铺名称"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">店铺形式<span class="bx">*</span></span>
@@ -53,11 +53,11 @@
             </view>
             <view class="gmpt">
                 <span class="">订单号码<span class="bx">*</span></span>
-                <input class="input1" type="text" value="" placeholder="请输入订单号或账号"/>
+                <input class="input1" bindblur="handleBlur3" type="text" value="" placeholder="请输入订单号或账号"/>
             </view>
             <view class="gmpt">
                 <span class="">联系电话<span class="bx">*</span></span>
-                <input class="input1" type="number" value="" placeholder="请输入企业联系电话"/>
+                <input class="input1" bindblur="handleBlur4" type="number" value="" placeholder="请输入企业联系电话"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">行业类型<span class="bx">*</span></span>
@@ -70,15 +70,15 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">品牌</span>
-                <input class="input1" type="text" value="" placeholder="请输入品牌"/>
+                <input class="input1" bindblur="handleBlur5" type="text" value="" placeholder="请输入品牌"/>
             </view>
             <view class="gmpt">
                 <span class="">型号</span>
-                <input class="input1" type="text" value="" placeholder="请输入型号"/>
+                <input class="input1" bindblur="handleBlur6" type="text" value="" placeholder="请输入型号"/>
             </view>
             <view class="gmpt">
                 <span class="">涉及金额<span class="bx">*</span></span>
-                <input class="input1" type="number" value="" placeholder="请输入涉及金额"/>
+                <input class="input1" bindblur="handleBlur7" type="number" value="" placeholder="请输入涉及金额"/>
             </view>
         </view>
 
@@ -114,7 +114,7 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">姓名<span class="bx">*</span></span>
-                <input class="input1" type="text" value="" placeholder="请输入您的姓名"/>
+                <input class="input1" bindblur="handleBlur8" type="text" value="" placeholder="请输入您的姓名"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">性别<span class="bx">*</span></span>
@@ -130,15 +130,237 @@
             </view>
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
-                <input class="input1 phone1" type="number" value="" placeholder="请输入手机号码"/>
+                <input class="input1 phone1" bindblur="handleBlur9" type="number" value="" placeholder="请输入手机号码"/>
                 <button class="yzm">获取验证码</button>
             </view>
             <view class="gmpt">
-                <span class="">验证码<span class="bx">*</span></span>
-                <input class="input1" type="text" value="" placeholder="请输入验证码"/>
+                <span class="yzmnum">验证码<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur10" type="text" value="" placeholder="请输入验证码"/>
             </view>
         </view>
+
+        <button type="default" class="submit">提交投诉</button>
     </view>
-    <view class=""></view>
-    <view class=""></view>
+
+    <view class="" tt:if={{tab2}}>
+        <view class="userdata">基本信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">企业名称<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur11" type="text" value="" placeholder="请输入企业名称"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">企业地址<span class="bx">*</span></span>
+                <picker
+                    mode="region"
+                    bindchange="bindMultiPickerChange"
+                    value="{{multiIndex}}"
+                    range="{{multiArray}}"
+                >
+                    <view class="picker">{{multiIndex[0]}},{{multiIndex[1]}},{{multiIndex[2]}}</view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">详细地址<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur12" type="text" value="" placeholder="请输入详细地址"/>
+            </view>
+            <view class="gmpt">
+                <span class="">联系电话<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur13" type="number" value="" placeholder="请输入企业联系电话"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">行业类型<span class="bx">*</span></span>
+                <picker
+                    value="{{index5}}"
+                    range="{{array5}}"
+                    bindchange="bindPickerChange5"
+                    bindcancel="bindPickerCancel5"
+                >
+                    <view class="picker">{{array5[index5]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+        </view>
+
+        <view class="userdata">投诉信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">品牌</span>
+                <input class="input1" bindblur="handleBlur14" type="text" value="" placeholder="请输入品牌"/>
+            </view>
+            <view class="gmpt">
+                <span class="">型号</span>
+                <input class="input1" bindblur="handleBlur15" type="text" value="" placeholder="请输入型号"/>
+            </view>
+            <view class="gmpt">
+                <span class="">涉及金额<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur16" type="number" value="" placeholder="请输入涉及金额"/>
+            </view>
+        </view>
+
+        <view class="userdata">投诉内容<span class="bx">*</span>(请保护个人隐私，如手机号等)</view>
+        <view class="userBox">
+            <textarea
+                class="textarea"
+                bindfocus="onTextFocus1"
+                bindblur="onTextBlur1"
+                bindinput="onTextInput1"
+                bindconfirm="onTextConfirm1"
+                placeholder="请输入您想投诉的内容"
+            />
+        </view>
+
+        <view class="userdata">投诉诉求<span class="bx">*</span></view>
+        <view class="tsbox">
+            <button class="{{btn5? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn5'>退款</button>
+            <button class="{{btn6? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn6'>换货</button>
+            <button class="{{btn7? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn7'>赔款</button>
+            <button class="{{btn8? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn8'>曝光</button>
+        </view>
+
+        <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
+        <view class="photo">
+            <button bindtap="chooseImage" class="photobtn">选择图片</button>
+            <view class="imgbox">
+                <image src="{{item.path}}" />
+            </view>
+        </view>
+
+        <view class="userdata">身份验证</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">姓名<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur17" type="text" value="" placeholder="请输入您的姓名"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">性别<span class="bx">*</span></span>
+                <picker
+                    value="{{index6}}"
+                    range="{{array6}}"
+                    bindchange="bindPickerChange6"
+                    bindcancel="bindPickerCancel6"
+                >
+                    <view class="picker">{{array6[index6]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">手机号码<span class="bx">*</span></span>
+                <input class="input1 phone1" bindblur="handleBlur18" type="number" value="" placeholder="请输入手机号码"/>
+                <button class="yzm">获取验证码</button>
+            </view>
+            <view class="gmpt">
+                <span class="yzmnum">验证码<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur19" type="text" value="" placeholder="请输入验证码"/>
+            </view>
+        </view>
+
+        <button type="default" class="submit">提交投诉</button>
+    </view>
+
+    <view class="" tt:if={{tab3}}>
+        <view class="userdata">基本信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="yzmnum">电视台<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur20" type="text" value="" placeholder="请输入电视台"/>
+            </view>
+            <view class="gmpt">
+                <span class="">节目名称<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur21" type="text" value="" placeholder="请输入电视台"/>
+            </view>
+            <view class="gmpt">
+                <span class="">联系电话<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur22" type="number" value="" placeholder="请输入企业联系电话"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">行业类型<span class="bx">*</span></span>
+                <picker
+                    value="{{index7}}"
+                    range="{{array7}}"
+                    bindchange="bindPickerChange7"
+                    bindcancel="bindPickerCancel7"
+                >
+                    <view class="picker">{{array7[index7]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+        </view>
+
+        <view class="userdata">投诉信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">品牌</span>
+                <input class="input1" bindblur="handleBlur23" type="text" value="" placeholder="请输入品牌"/>
+            </view>
+            <view class="gmpt">
+                <span class="">型号</span>
+                <input class="input1" bindblur="handleBlur24" type="text" value="" placeholder="请输入型号"/>
+            </view>
+            <view class="gmpt">
+                <span class="">涉及金额<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur25" bindblur="handleBlur1" type="number" value="" placeholder="请输入涉及金额"/>
+            </view>
+        </view>
+
+        <view class="userdata">投诉内容<span class="bx">*</span>(请保护个人隐私，如手机号等)</view>
+        <view class="userBox">
+            <textarea
+                class="textarea"
+                bindfocus="onTextFocus2"
+                bindblur="onTextBlur2"
+                bindinput="onTextInput2"
+                bindconfirm="onTextConfirm2"
+                placeholder="请输入您想投诉的内容"
+            />
+        </view>
+
+        <view class="userdata">投诉诉求<span class="bx">*</span></view>
+        <view class="tsbox">
+            <button class="{{btn9? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn9'>退款</button>
+            <button class="{{btn10? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn10'>换货</button>
+            <button class="{{btn11? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn11'>赔款</button>
+            <button class="{{btn12? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn12'>曝光</button>
+        </view>
+
+        <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
+        <view class="photo">
+            <button bindtap="chooseImage" class="photobtn">选择图片</button>
+            <view class="imgbox">
+                <image src="{{item.path}}" />
+            </view>
+        </view>
+
+        <view class="userdata">身份验证</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">姓名<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur26" type="text" value="" placeholder="请输入您的姓名"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">性别<span class="bx">*</span></span>
+                <picker
+                    value="{{index6}}"
+                    range="{{array6}}"
+                    bindchange="bindPickerChange6"
+                    bindcancel="bindPickerCancel6"
+                >
+                    <view class="picker">{{array6[index6]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">手机号码<span class="bx">*</span></span>
+                <input class="input1 phone1" bindblur="handleBlur27" type="number" value="" placeholder="请输入手机号码"/>
+                <button class="yzm">获取验证码</button>
+            </view>
+            <view class="gmpt">
+                <span class="yzmnum">验证码<span class="bx">*</span></span>
+                <input class="input1" bindblur="handleBlur28" type="text" value="" placeholder="请输入验证码"/>
+            </view>
+        </view>
+
+        <button type="default" class="submit">提交投诉</button>
+    </view>
 </view>
