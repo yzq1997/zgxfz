@@ -1,16 +1,111 @@
+
 .tab{
-  display: flex;
-  justify-content: space-between;
-  white-space: nowrap;
-  width: auto;
-  overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    width: auto;
+    overflow-x: scroll;
+    height: 100rpx;
+    /* align-items: center; */
+    background: #F8F8F8 ;
+    position: fixed;
+    width: 100%;
+  }
+.tabFontT{
+    font-size: 16px;
+    font-family: PingFang-SC-Regular;
+    color: red;
+    border-bottom: 1px solid red;
+    height: 99rpx;
+    line-height: 99rpx;
+    margin: 0 20rpx;
+    padding: 0 20rpx;
 }
-.tab>span{
-  height: 30px;
-  line-height: 30px;
-  /* background: pink; */
-  font-size: 16px;
-  padding-left: 10px;
-  padding-right:10px;
-  border-bottom: 2px solid red
+.tabFont{
+    font-size: 32rpx;
+    font-family: PingFang-SC-Regular;
+    color: black;
+    height: 99rpx;
+    line-height: 99rpx;
+    margin: 0 20rpx;
+    padding: 0 20rpx;
+}
+.list{
+    /* margin-top: 110rpx; */
+    padding-top: 110rpx;
+}
+.listbox{
+    padding: 40rpx 20rpx 20rpx;
+    border-bottom: 1px solid #eee;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.topright>image{
+    width: 200rpx;
+    height: 160rpx;
+}
+.title{
+    display: -webkit-box;             
+    -webkit-box-orient: vertical;   
+    font-family: PingFang-SC-Medium;
+    color: rgba(26,26,26,1);
+    -webkit-line-clamp: 1;            
+    overflow: hidden;  
+    font-size: 32rpx;
+    margin: 8rpx 0;
+}
+.main{
+    display: -webkit-box;             
+    -webkit-box-orient: vertical;   
+    font-family: PingFang;   
+    -webkit-line-clamp: 2;            
+    overflow: hidden;  
+    font-size: 28rpx;
+    margin: 8rpx 0;
+}
+.center{
+    display: flex;
+    height: 200rpx;
+}
+.center>image{
+    height: 200rpx;
+}
+.foot{
+    display: flex;
+    align-items: center;
+    height: 50rpx;
+}
+.foot>view{
+    margin-right: 100rpx;
+    font-size: 32rpx;
+    color: #999;
+    font-family: PingFang-SC-Regular;
+}
+.read{
+    display: flex;
+    align-items: center;
+}
+.read>span{
+    font-size: 28rpx;
+    color: rgba(153,153,153,1);
+}
+.read>image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.footer>image{
+    display: block;
+    width: 300rpx;
+    height: 300rpx;
+    margin: 0 auto;
+}
+.foot_p{
+    text-align: center;
+    height: 80rpx;
+    width: 100%;
+    font-size: 14px;
+    line-height: 80rpx;
+    color: #000;
 }

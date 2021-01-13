@@ -1,44 +1,92 @@
-.box{
-    /* padding: 0 10px; */
-    
-}
+
 .title{
     overflow: hidden;
-    border-bottom: 10px solid #F2F2F2;
+    border-bottom: 20rpx solid #F2F2F2;
+    padding-top: 20rpx;
+    position: relative;
 }
 .tit{
-    padding: 0 10px;
+    padding: 0 20rpx;
     display: -webkit-box;             
     -webkit-box-orient: vertical;     
     -webkit-line-clamp: 1;            
     overflow: hidden; 
+    font-size: 32rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(34,34,34,1);
+ 
+}
+.name{
+    padding: 10rpx 0;
 }
 .name>span{
-    font-size: 16px;
+    font-size: 32rpx;
     font-family: PingFang-SC-Regular;
 }
 .name>span:nth-of-type(1){
     border: 1px solid red;
-    border-radius: 5px;
+    border-radius: 8rpx;
     color: red;
-    padding: 1px 5px;
-    margin-right: 10px;
-    margin-left: 10px;
+    padding: 2rpx 10rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+}
+.name>span:nth-of-type(2){
+    color: #999;
+    font-size: 28rpx;
 }
 image{
-    margin-top: 10px;
+    margin-top: 10rpx;
     width: 100%;
-    height: 200px;
-    border-bottom: 1px solid #666;
+    height: 400rpx;
+
+    /* border-bottom: 1px solid #eee; */
+}
+.tsnum{
+    width: 30%;
+    height: 48rpx;
+    background: pink;
+    position: absolute;
+    bottom: 60rpx;
+    background: url('https://weixin.jshcsoft.com/weixin_zgxfz/Images/biaoqian.png') no-repeat;
+    background-size: cover;
+    padding-left: 100rpx;
+    color: #fff;
+    line-height: 48rpx;
+    font-size: 28rpx;
 }
 .time{
-    margin-left: 5px;
-    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    height: 50rpx;
+    padding-left: 20rpx;
 }
-.time>span{
-    margin-right: 20px;
-    font-size: 16px;
-    line-height: 12px;
+.time>view{
+    margin-right: 100rpx;
+    font-size: 32rpx;
     color: #999;
     font-family: PingFang-SC-Regular;
+}
+.read{
+    display: flex;
+    align-items: center;
+}
+.read>span{
+    font-size: 28rpx;
+}
+.read>image{
+    width: 40rpx;
+    height: 40rpx;
+    border: 0;
+    margin: 0;
+}
+
+.footer{
+    text-align: center;
+    height: 80rpx;
+    width: 100%;
+    font-size: 14px;
+    line-height: 80rpx;
+    color: #999;
 }

@@ -1,69 +1,55 @@
 <view class="tab"> 
-    <span>金融</span>
-    <span>手机数码</span>
-    <span>食品饮料</span>
-    <span>母婴玩具</span>
-    <span>住宅</span>
-    <span>旅游</span>
-    <span>日用家电</span>
-    <span>化妆</span>
-    <span>医疗保健</span>
-    <span>餐饮</span>
-    <span>水电气</span>
-    <span>快递物流</span>
-    <span>电商</span>
-    <span>运营商</span>
-    <span>汽车</span>
-    <span>其他</span>
+    <span class="{{tab[0]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="0" bindtap='tab'>金融</span>
+    <span class="{{tab[1]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="1" bindtap='tab'>手机数码</span>
+    <span class="{{tab[2]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="2" bindtap='tab'>食品饮料</span>
+    <span class="{{tab[3]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="3" bindtap='tab'>母婴玩具</span>
+    <span class="{{tab[4]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="4" bindtap='tab'>住宅</span>
+    <span class="{{tab[5]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="5" bindtap='tab'>旅游</span>
+    <span class="{{tab[6]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="6" bindtap='tab'>日用家电</span>
+    <span class="{{tab[7]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="7" bindtap='tab'>化妆</span>
+    <span class="{{tab[8]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="8" bindtap='tab'>医疗保健</span>
+    <span class="{{tab[9]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="9" bindtap='tab'>餐饮</span>
+    <span class="{{tab[10]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="10" bindtap='tab'>水电气</span>
+    <span class="{{tab[11]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="11" bindtap='tab'>快递物流</span>
+    <span class="{{tab[12]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="12" bindtap='tab'>电商</span>
+    <span class="{{tab[13]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="13" bindtap='tab'>运营商</span>
+    <span class="{{tab[14]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="14" bindtap='tab'>汽车</span>
+    <span class="{{tab[15]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="15" bindtap='tab'>其他</span>
 </view>
 
-<view class="list">
-    <view class="listbox">
+<view class="list" id="list">
+    <view class="listbox" tt:for="{{dataList}}">
         <view class="top">
             <view class="topleft">
-                <view class="title">标标题标题标题标题题标题题标题题标题题标题题</view>
-                <view class="main">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+                <view class="title">{{item.BG_Title}}</view>
+                <view class="main">{{item.BG_TS_Content}}</view>
             </view>
-            <view class="topright" tt:if={{leftImg}}>
-                <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            <view class="topright" tt:if={{item.BG_Images.length == 1 ? true:false}}>
+                <image src="https://{{item.BG_Images[0]}}" mode="" />
             </view>
         </view>
 
-        <view class="center" tt:if={{centerImg}}>
-            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
-            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
-            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+        <view class="center" tt:if={{item.BG_Images.length > 1 ? true:false}}>
+            <image src="https://{{item.BG_Images[0]}}" mode="" />
+            <image src="https://{{item.BG_Images[1]}}" mode="" />
+            <image src="https://{{item.BG_Images[2]}}" mode="" />
         </view>
 
         <view class="foot">
-            <span>152</span>
-            <span>51</span>
-            <span>2020-20-02</span>
-        </view>
-    </view>
-
-    <view class="listbox">
-        <view class="top">
-            <view class="topleft">
-                <view class="title">标标题标题标题标题题标题题标题题标题题标题题</view>
-                <view class="main">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+            <view class="read">
+                <image src="../../image/read.png" mode="" />
+                <span>{{item.BG_ViewCount}}<span>
             </view>
-            <view class="topright" tt:if={{leftImg}}>
-                <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
+            <view class="read">
+                <image src="../../image/zhichi.png" mode="" />
+                <span>{{item.BG_BackUpCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/history.png" mode="" />
+                <span>{{item.CA_TS_Date}}<span>
             </view>
         </view>
-
-        <view class="center" tt:if={{centerImg}}>
-            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
-            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
-            <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" mode="" />
-        </view>
-
-        <view class="foot">
-            <span>152</span>
-            <span>51</span>
-            <span>2020-20-02</span>
-        </view>
     </view>
+    <view class="footer">已经没有了哦...</view>
 </view>
 

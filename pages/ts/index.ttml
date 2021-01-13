@@ -45,6 +45,7 @@
         <view class="">第七条 投诉方和被投诉方不能协商解决的投诉，经双方一致同意，提请消费者协会进行调解。</view>
         <view class="">第八条 投诉方同意所发起投诉信息将或曝光(平台监督下将保护您的个人信息)。</view>
         <view class="">好的</view>
+        <view class="zwf"></view>
         <view class="btnbox">
             <span class="btnt" bindtap='btnt'>同意</span>
             <span class="btnf" bindtap='btnf'>不同意</span>

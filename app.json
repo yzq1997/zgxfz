@@ -21,32 +21,32 @@
             {
                 "text": "首页",
                 "pagePath": "pages/index/index",
-                "iconPath": "./image/home.png",
-                "selectedIconPath": "./image/home1.png"
+                "iconPath": "./image/shouye1.png",
+                "selectedIconPath": "./image/shouye.png"
             },
             {
                 "text": "群体投诉",
                 "pagePath": "pages/qtts/index",
-                "iconPath": "./image/dy.png",
-                "selectedIconPath": "./image/dy1.png"
+                "iconPath": "./image/qtts1.png",
+                "selectedIconPath": "./image/qtts.png"
             },
             {
                 "text": "投诉",
                 "pagePath": "pages/ts/index",
-                "iconPath": "./image/qrcode.jpg",
-                "selectedIconPath": "./image/qrcode.jpg"
+                "iconPath": "./image/icon315.png",
+                "selectedIconPath": "./image/icon315.png"
             },
             {
                 "text": "品牌投诉",
                 "pagePath": "pages/ppts/index",
-                "iconPath": "./image/dy.png",
-                "selectedIconPath": "./image/dy1.png"
+                "iconPath": "./image/ppts1.png",
+                "selectedIconPath": "./image/ppts.png"
             },
             {
                 "text": "行业投诉",
                 "pagePath": "pages/hyts/index",
-                "iconPath": "./image/dy.png",
-                "selectedIconPath": "./image/dy1.png"
+                "iconPath": "./image/hyts1.png",
+                "selectedIconPath": "./image/hyts.png"
             }
         ]
     }

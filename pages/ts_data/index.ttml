@@ -131,7 +131,7 @@
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
                 <input class="input1 phone1" bindblur="handleBlur9" type="number" value="" placeholder="请输入手机号码"/>
-                <button class="yzm">获取验证码</button>
+                <button class="yzm" bindtap='getnum1'>{{getnum1}}</button>
             </view>
             <view class="gmpt">
                 <span class="yzmnum">验证码<span class="bx">*</span></span>
@@ -248,7 +248,7 @@
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
                 <input class="input1 phone1" bindblur="handleBlur18" type="number" value="" placeholder="请输入手机号码"/>
-                <button class="yzm">获取验证码</button>
+                <button class="yzm" bindtap='getnum2'>{{getnum2}}</button>
             </view>
             <view class="gmpt">
                 <span class="yzmnum">验证码<span class="bx">*</span></span>
@@ -353,7 +353,7 @@
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
                 <input class="input1 phone1" bindblur="handleBlur27" type="number" value="" placeholder="请输入手机号码"/>
-                <button class="yzm">获取验证码</button>
+                <button class="yzm" bindtap='getnum3'>{{getnum3}}</button>
             </view>
             <view class="gmpt">
                 <span class="yzmnum">验证码<span class="bx">*</span></span>
@@ -364,3 +364,6 @@
         <button type="default" class="submit">提交投诉</button>
     </view>
 </view>
+
+
+

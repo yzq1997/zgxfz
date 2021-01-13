@@ -1,28 +1,29 @@
-<view class="box">
-    <view class="title" bindtap='toList'>
-        <span class="tit">撒上单阿三打阿萨阿萨实打实打算撒打撒打大苏打啊</span>
+<view class="box" id="box">
+    <view class="title" tt:for="{{dataList}}" bindtap='toList'>
+        <span class="tit">{{item.IE_Title}}</span>
         <view class="name">
             <span>曝光主体</span>
-            <span>某某某</span>
+            <span>{{item.IE_ExposureBody}}</span>
         </view>
-        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+        <image src="{{item.IE_ImgUrl}}" mode="" />
+        <view class="tsnum">
+            已有<span>{{item.IE_RelationSingleCount}}</span>条投诉
+        </view>
         <view class="time">
-            <span>480</span>
-            <span>50</span>
-            <span>2020-20-20</span>
+            <view class="read">
+                <image src="../../image/read.png" mode="" />
+                <span>{{item.IE_ReadCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/zhichi.png" mode="" />
+                <span>{{item.IE_BackUpCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/history.png" mode="" />
+                <span>{{item.Joindate}}<span>
+            </view>
         </view>
     </view>
-    <view class="title">
-        <span class="tit">撒上单阿三打阿萨阿萨实打实打算撒打撒打大苏打啊</span>
-        <view class="name">
-            <span>曝光主体</span>
-            <span>某某某</span>
-        </view>
-        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-        <view class="time">
-            <span>480</span>
-            <span>50</span>
-            <span>2020-20-20</span>
-        </view>
-    </view>
+
+    <view class="footer">已经没有了哦...</view>
 </view>
