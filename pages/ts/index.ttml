@@ -59,3 +59,6 @@
         <view class="xybtn" bindtap='zzct'>确定</view>
     </view>
 </view>
+
+
+<image src="../../image/bg.png" class="banner" mode="" />

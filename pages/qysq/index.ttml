@@ -1,0 +1,60 @@
+<view class="box">
+    <view class="img">
+        <image src="../../image/comAp.png" mode="" />
+    </view>
+
+    <view class="header">
+        您好！请留下企业信息，我们会尽快与您联系！
+    </view>
+
+    <view class="main">
+        <view class="gmpt">
+            <span class="">企业名称<span class="bx">*</span></span>
+            <input class="input1" bindinput="handleBlur1" type="text" value="" placeholder="请输入企业名称"/>
+        </view>
+        <view class="gmpt">
+            <span class="">企业固话</span>
+            <input class="input1" bindinput="handleBlur2" type="text" value="" placeholder="请输入企业固话"/>
+        </view>
+        <view class="gmpt">
+            <span class="">经营地址<span class="bx">*</span></span>
+            <input class="input1" bindinput="handleBlur3" type="text" value="" placeholder="请输入经营地址"/>
+        </view>
+        <view class="gmpt">
+            <span class="">电子邮箱<span class="bx">*</span></span>
+            <input class="input1" bindinput="handleBlur4" type="text" value="" placeholder="请输入电子邮箱"/>
+        </view>
+        <view class="gmpt">
+            <span class="">联系人<span class="bx">*</span></span>
+            <input class="input1" bindinput="handleBlur5" type="text" value="" placeholder="请输入联系人"/>
+        </view>
+        <view class="gmpt dpxs">
+            <span class="">性别<span class="bx">*</span></span>
+            <picker
+                value="{{index}}"
+                range="{{array}}"
+                bindchange="bindPickerChange"
+                bindcancel="bindPickerCancel"
+            >
+                <view class="picker">{{array[index]}} </view>
+            </picker>
+        </view>
+        <view class="gmpt">
+            <span class="">联系电话<span class="bx">*</span></span>
+            <input class="input1" bindinput="handleBlur6" type="text" value="" placeholder="请输入联系电话"/>
+        </view>
+        <view class="gmpt">
+            <span class="">验证码<span class="bx">*</span></span>
+            <input class="input1" bindinput="handleBlur7" type="text" value=""/>
+            <span type="default" class="btn" bindtap='btn'>{{yzm}}</span>
+        </view>
+    </view>
+
+    <view class="foot">
+        <button type="default" class="submit" bindtap="sub">提交</button>
+    </view>
+
+    <view class="had" tt:if={{qyhad}}>
+        企业已存在
+    </view>
+</view>

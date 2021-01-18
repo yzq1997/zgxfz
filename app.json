@@ -7,7 +7,11 @@
         "pages/hyts/index",
         "pages/qtts_list/index",
         "pages/detail/index",
-        "pages/ts_data/index"
+        "pages/ts_data/index",
+        "pages/ts_list/index",
+        "pages/article/index",
+        "pages/search/index",
+        "pages/qysq/index"
 
     ],
     "window": {
@@ -32,7 +36,7 @@
             },
             {
                 "text": "投诉",
-                "pagePath": "pages/ts/index",
+                "pagePath": "pages/ts_list/index",
                 "iconPath": "./image/icon315.png",
                 "selectedIconPath": "./image/icon315.png"
             },

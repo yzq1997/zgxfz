@@ -1,63 +1,117 @@
 
 <!-- 顶部 -->
-<view class="banner"></view>
-
+<view id="banner">
+    <image src="../../image/home_banner.png" style="width:100%;" />
+    <view class="totalAccept">累计受理投诉单<span class="acceptNum tsSl">{{tsNum}}</span><span style="color:rgba(196,36,29,1);">件</span></view>
+    <view class="totalComplain">累计投诉曝光率<span class="acceptNum bgl">{{tsPercentage}}</span></view>
+    <!-- <view class="search">请输入关键词、企业名称或品牌</view> -->
+</view>
 <!-- 搜索框 -->
-<input type="text" class="inp" placeholder="请输入关键词,企业名称或者品牌"></input>
+<input type="text" class="inp" bindtap='goSearch' placeholder="请输入关键词,企业名称或者品牌"></input>
 
 <!-- 选项卡 -->
-<view class="tab">
-    <view class="tabO" bindtap='tab1'>
-        <span class="tabFont">推荐</span>
-        <span class="tabBottom" tt:if={{tab}}></span>
+<view class="{{scrtop>200?'tabdw':'tab'}}" ref="List" id="ada">
+    <view class="tabtitle">
+        <view class="tabO" bindtap='tab1'>
+            <span class="tabFont">推荐</span>
+            <span class="tabBottom" tt:if={{tab}}></span>
+        </view>
+        <view class="tabT" bindtap='tab2'>
+            <span class="tabFont">最新</span>
+            <span class="tabBottom" tt:if={{!tab}}></span>
+        </view>
     </view>
-    <view class="tabT" bindtap='tab2'>
-        <span class="tabFont">最新</span>
-        <span class="tabBottom" tt:if={{!tab}}></span>
-    </view>
+    
 </view>
 
 <!-- 推荐 -->
 <view tt:if={{tab}} class="content">
-    <view class="list">
+    <view class="list" bindtap='toArticle' tt:for="{{DataList}}">
         <view class="title">
-            <span class="tit"><span class="hot">热点</span>标标题标题标题标题标题标题标题标标题标题标标题标题标题标题标题标题标题题</span>
+            <view class="hot">热点</view>
+            <view class="tit">{{item.BG_Title}}</view>   
         </view>
         <view class="main">
-            标标题标题标题标题标题标题标题标标题标标题标标标题标标标题标标题标标题标题标题标题标题标题标
+               {{item.BG_TS_Content}}
         </view>
-        <view class="img">
-            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
+        <view class="img"  tt:if="{{item.BG_Images}}!=''">
+              <image tt:for="{{item.BG_Images}}" tt:for-index="num" tt:for-item="itemImg" src="{{itemImg}}" alt="" />
         </view>
-        <view class="time">
-            <span>721</span>
-            <span>30</span>
-            <span>2020-02-05</span>
-        </view>
-    </view>
-    <view class="list">
-        <view class="title">
-            <span class="tit"><span class="hot">热点</span>标标题标题标题标题标题标题标题标标题标题标标题标题标题标题标题标题标题题</span>
-        </view>
-        <view class="main">
-            标标题标题标题标题标题标题标题标标题标标题标标标题标标标题标标题标标题标题标题标题标题标题标
-        </view>
-        <view class="img">
-            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-            <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-        </view>
-        <view class="time">
-            <span>721</span>
-            <span>30</span>
-            <span>2020-02-05</span>
+        
+        <view class="listInfo">
+            <view class="listRead">
+                <view class="readImg">
+                    <image src="../../image/read.png" alt="" />
+                </view>
+                <view class="readNum">{{item.BG_ViewCount}}</view>
+            </view>
+            <view class="listRead support">
+                <view class="supportImg">
+                    <image src="../../image/zhichi.png" alt="" />
+                </view>
+                <view class="supportNum">{{item.BG_BackUpCount}}</view>
+            </view>
+            <view class="listRead">
+                <view class="timeImg">
+                    <image src="../../image/history.png" alt="" />
+                </view>
+                <view class="listTime">{{item.BG_Date}}</view>
+            </view>
         </view>
     </view>
+    <view tt:if={{DataAll}} class="loadFinishData" style="display: block;">已经到底了！</view>
 </view>
 
 <!-- 最新 -->
-<view tt:if={{!tab}}>
-    data2
+<view tt:if={{!tab}} class="content">
+    <view class="list" bindtap='toArticle' tt:for="{{DataList}}">
+        <view class="title">
+            <!-- <view class="hot">热点</view> -->
+            <view class="zxtit">{{item.BG_Title}}</view>   
+        </view>
+        <view class="main">
+                {{item.BG_TS_Content}}
+        </view>
+        <view class="img"  tt:if="{{item.BG_Images}}!=''">
+                <image tt:for="{{item.BG_Images}}" tt:for-index="num" tt:for-item="itemImg" src="{{itemImg}}" alt="" />
+        </view>
+        
+        <view class="listInfo">
+            <view class="listRead">
+                <view class="readImg">
+                    <image src="../../image/read.png" alt="" />
+                </view>
+                <view class="readNum">{{item.BG_ViewCount}}</view>
+            </view>
+            <view class="listRead support">
+                <view class="supportImg">
+                    <image src="../../image/zhichi.png" alt="" />
+                </view>
+                <view class="supportNum">{{item.BG_BackUpCount}}</view>
+            </view>
+            <view class="listRead">
+                <view class="timeImg">
+                    <image src="../../image/history.png" alt="" />
+                </view>
+                <view class="listTime">{{item.BG_Date}}</view>
+            </view>
+        </view>
+    </view>
+    <view tt:if={{DataAll}} class="loadFinishData" style="display: block;">已经到底了！</view>
+</view>
+
+<view class="application" tt:if={{clo}}>
+    <view class="epApplication" bindtap='enterprise'>
+        <view class="epCenter">
+            <p>企业</p>
+            <p>申请</p>
+        </view>
+    </view>
+    <view class="close" bindtap='close'>
+        <image src="../../image/sider.png" alt=""/>
+    </view>
+</view>
+
+<view tt:if={{top}} class="backTop" bindtap='gotop' >
+    <image src="../../image/back.png" alt="" />
 </view>

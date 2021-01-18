@@ -7,11 +7,15 @@ Page({
         page: 0,  //分页
     },
     //点击跳转列表页
-    toList() {
+    toList(e) {
+        // console.log(e);
+        let id = e.currentTarget.dataset.alphaBeta;
+        let newid = e.currentTarget.dataset.alphaBeta1;
+        // console.log(id);
         tt.reLaunch({
-            url: `../qtts_list/index?sky=${this.data.num}`,
+            url: `../qtts_list/index?id=${id}&newid=${newid}`,
             success(res) {
-                console.log(res);
+                // console.log(res);
             },
             fail(res) {
                 console.log(`reLaunch调用失败`);
@@ -35,7 +39,7 @@ Page({
             dataType: " json", // 指定返回数据的类型为 string
             responseType: "text",
             success(res) {
-                console.log(JSON.parse(JSON.parse(res.data)));
+                // console.log(JSON.parse(JSON.parse(res.data)));
                 let arr = JSON.parse(JSON.parse(res.data)).Rows.map((item, index) => {
                     // console.log(item);
                     item.Joindate = item.Joindate.substring(0, 10);
@@ -84,6 +88,8 @@ Page({
             }
         })
     },
+
+
     onLoad: function () {
         this.getdata(this.data.page)
     },

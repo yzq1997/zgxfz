@@ -1,0 +1,355 @@
+#app{
+    background-color: #E3E3E3;
+    position: absolute;
+    font-family: PingFang SC;
+    font-weight: 500;
+    padding-bottom: 100rpx
+}
+.ljone{
+    left: 118rpx;
+}
+.ljtwo{
+    right: 106rpx;
+}
+
+.ljthr{
+    left: 118rpx;
+    margin-top: 364rpx;
+}
+.ljfor{
+    right: 106rpx;
+    margin-top: 364rpx;
+}
+
+.article{
+    height: 100%;
+    width: 100%;
+    margin-top: 18rpx;
+}
+
+.ljc{
+    width: 14rpx;
+    height: 41rpx;
+    background: #FFFFFF;
+    position: absolute;
+    top: -2rpx;
+    border-radius:  20rpx;
+}
+
+.jcinfo{
+    width: 690rpx;
+    height: 353rpx;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    margin-top: 18rpx;
+}
+
+.one{
+    overflow: hidden;
+}
+ 
+.one view{
+    width: 27rpx;
+    height: 27rpx;
+    background-color: #000000;
+    float: left;
+    border-radius: 50%;
+    margin-top: 8rpx
+}
+.one>view:nth-of-type(1){
+    margin-left: 82rpx;
+}
+
+.one>view:nth-of-type(2){
+    margin-left: 486rpx;
+}
+
+.jcinfo .two{
+    overflow: hidden;
+    margin-top: 17rpx;
+}
+
+.jcinfo .two >image{
+    width: 46rpx;
+    height: 21rpx;
+    float: left;
+    margin-left: 22rpx;
+}
+.jcinfo .two >label{
+    float: left;  
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #585174;
+    margin-left: 20rpx;
+    line-height: 22rpx;
+}
+.jcinfo .thr{
+    overflow: hidden;
+    padding-left: 22rpx;
+}
+.jcinfo .thr>label{
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #1A1A1A;
+    line-height: 30rpx;
+    margin-top: 42rpx;
+    display: block;
+}
+.jcinfo .thr>span{
+    margin-top: 17rpx;
+    line-height: 24rpx;
+    display: block;
+}
+.jcinfo .thr>span:nth-of-type(1){
+    margin-top: 30rpx;
+}
+.jcinfo .thr>span label{
+    font-size: 24rpx;
+    font-weight: 500;
+    color: #666666;
+}
+.jcinfo .thr>span label:nth-of-type(1){
+    color: #333333;
+}
+
+.help{
+    width: 690rpx;
+    height: 204rpx;
+    margin: 0 auto;
+    margin-top: 12rpx;
+    background-color: #FFFFFF;
+}
+
+.help .two span{
+    margin-left: 21rpx;
+    margin-top: 25rpx;
+    display: block;
+    line-height: 30rpx;
+}
+.help .two span>label:nth-of-type(1){   
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #000000;
+}
+
+.help .two span>label:nth-of-type(2){   
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #67B867;
+    margin-left: 10rpx;
+}
+.help .thr{
+    overflow: hidden;
+    padding-left: 32rpx;
+    margin-top: 18rpx;
+    width: 534rpx;
+    float: left;
+}
+.help .thr image{
+    width: 57rpx;
+    height: 57rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.help .zl{
+    width: 100rpx;
+    height: 100rpx;
+    background-color: aqua;
+}
+.help .zlbtn{
+    width: 120rpx;
+    height: 100rpx;
+    float: left;
+    position: relative;
+    bottom: 15px;
+
+}
+.help .zlbtn>image{
+    width: 120rpx;
+height: 100rpx;
+}
+
+.process{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20rpx;
+}
+.process .lc{
+    overflow: hidden;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+}
+.process .lc>.left{
+     
+}
+.process .lc .left>.dian{
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 50%;
+    border: 8rpx solid #585174;
+
+}
+.process .lc .left>.xx{
+    margin-left: 10rpx; 
+    border-right:1px dashed black;
+    width:1px;
+}
+
+.process .content{
+    /* width: 100%; */
+    overflow: hidden;
+    float: left;
+    margin-left: 15rpx;
+}
+.process .content>.fqts{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+.process .content>.fqts span{  
+    font-size: 26rpx;
+    color: #7C7C7C;
+    line-height: 21rpx;
+}
+.process .content>.fqts .fqtscontent{
+    width: 632rpx;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    margin-top: 20rpx;
+}
+.process .content>.fqts .fqtscontent .one{
+    width: 565rpx;
+    /* padding: 0 35rpx; */
+    margin-left: 35rpx;
+    border-bottom:1px solid #CCCCCC;
+}
+.process .content>.fqts .fqtscontent .one>image{
+    width: 52rpx;
+    height: 52rpx;
+    border-radius: 50%;
+    float: left;
+    margin-top: 15rpx;
+}
+.process .content>.fqts .fqtscontent .one>span:nth-of-type(1){
+    color: #333333;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    float: left;
+    margin-left: 20rpx;
+}
+.process .content>.fqts .fqtscontent .one>span:nth-of-type(2){
+    color: #FF5C69;
+    font-size: 26rpx;
+    line-height: 80rpx;
+    float: right;
+}
+.process .content>.fqts .fqtscontent .two .title{
+    width: 553rpx;
+    padding-left: 37rpx;
+    padding-right: 42rpx;
+    font-size: 26rpx; 
+    line-height: 36rpx;
+    color: #7C7C7C;
+    margin-top: 20rpx;
+}
+
+.process .content>.fqts .fqtscontent .two .shtg{
+    line-height: 60rpx
+}
+ 
+.process .content>.fqts .fqtscontent .two .tsimg{
+    width: calc(100% - 84px);
+    overflow: hidden;
+    margin-left: 42rpx;
+    margin-bottom: 40rpx;
+    margin-top: 24rpx;
+}
+.process .content>.fqts .fqtscontent .two .tsimg>image{
+    width: 130rpx;
+    height: 130rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.complainBtn {
+    display: flex;
+    display: -webkit-flex;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Bold;
+    color: rgba(255,255,255,1);
+    line-height: 66rpx;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    margin-top: 33rpx;
+}
+.complainHim {
+    text-align: center;
+    width: 240rpx;
+    height: 66rpx;
+    background-color: #C70101;
+    border-radius: 4rpx;
+}
+
+.handleProcess {
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(88,81,116,1);
+    line-height: 50rpx;
+    padding-left: 79rpx;
+    box-sizing: border-box;
+    margin-top: 40rpx;
+}
+
+.processSpeed {
+    width: 600rpx;
+    height: 9rpx;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 45rpx;
+}
+
+.nowPercent {
+    /*width: 1rpx;*/
+    background-color: #E13E3E;
+    height: 100%;
+    border-radius: 45rpx;
+}
+ 
+.publishComment {
+    display: flex;
+    display: -webkit-flex;
+    font-size: 30rpx;
+    background-color: #f2f2f2;
+    padding: 20rpx 40rpx;
+    align-items: center;
+    -webkit-align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    box-sizing: border-box;
+    border-top: 1px solid #C3C2C2;
+}
+
+.submitComment {
+    border: 0;
+    background-color: #fff;
+    font-size: 25rpx;
+    outline: none;
+    flex: 0.8;
+    height: 60rpx;
+    padding-left: 19rpx;
+    box-sizing: border-box;
+}
+
+.submit {
+    flex: 0.18;
+    text-align: center;
+}
+
+
+
+
+

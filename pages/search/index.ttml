@@ -1,0 +1,134 @@
+
+<view class="input">
+    <input type="text" class="inp" bindconfirm="handleConfirm" placeholder="请输入关键词,企业名称或者品牌"></input>
+    <span class='cancel' bindtap='goHome'>取消</span>
+</view>
+
+<view class="tab" tt:if={{foot}}> 
+    <span class="{{tab[0]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="0" bindtap='tab'>投诉单</span>
+    <span class="{{tab[1]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="1" bindtap='tab'>群体投诉</span>
+    <span class="{{tab[2]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="2" bindtap='tab'>品牌</span>
+</view>
+
+<view class="tabO" id="list" tt:if={{tab[0]}}>
+    <view class="listbox" tt:for="{{dataList}}">
+        <view class="top">
+            <view class="topleft">
+                <view class="title">{{item.BG_Title}}</view>
+                <view class="main">{{item.BG_TS_Content}}</view>
+            </view>
+            <view class="topright" tt:if={{item.BG_Images.length == 1 ? true:false}}>
+                <image src="{{item.BG_Images[0]}}" mode="" />
+            </view>
+        </view>
+
+        <view class="center" tt:if={{item.BG_Images.length > 1 ? true:false}}>
+            <image src="{{item.BG_Images[0]}}" mode="" />
+            <image src="{{item.BG_Images[1]}}" mode="" />
+            <image src="{{item.BG_Images[2]}}" mode="" />
+        </view>
+
+        <view class="foot">
+            <view class="read">
+                <image src="../../image/read.png" mode="" />
+                <span>{{item.BG_ViewCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/zhichi.png" mode="" />
+                <span>{{item.BG_BackUpCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/history.png" mode="" />
+                <span>{{item.CA_TS_Date}}<span>
+            </view>
+        </view>
+    </view>
+    <view class="footer" tt:if={{foot}}>已经没有了哦...</view>
+</view>
+
+
+<view class="tabO" id="list" tt:if={{tab[1]}}>
+    <view class="title1" tt:for="{{dataList}}" bindtap='toList' data-alpha-beta="{{item.ID}}" data-alpha-beta1="{{item.IE_RelationCode}}">
+        <span class="tit1">{{item.IE_Title}}</span>
+        <view class="name1">
+            <span>曝光主体</span>
+            <span>{{item.IE_ExposureBody}}</span>
+        </view>
+        <image src="{{item.IE_ImgUrl}}" class="img1" mode="" />
+        <view class="tsnum1">
+            已有<span>{{item.IE_RelationSingleCount}}</span>条投诉
+        </view>
+        <view class="time1">
+            <view class="read1">
+                <image src="../../image/read.png" mode="" />
+                <span>{{item.IE_ReadCount}}<span>
+            </view>
+            <view class="read1">
+                <image src="../../image/zhichi.png" mode="" />
+                <span>{{item.IE_BackUpCount}}<span>
+            </view>
+            <view class="read1">
+                <image src="../../image/history.png" mode="" />
+                <span>{{item.Joindate}}<span>
+            </view>
+        </view>
+    </view>
+    <view class="footer" tt:if={{foot}}>已经没有了哦...</view>
+</view>
+
+<view class="tabO" id="list" tt:if={{tab[2]}}>
+    <view class="listbox2" tt:for="{{dataList}}">
+        <view class="top2">
+            <view class="topleft2">
+                <view class="title2">{{item.BG_Title}}</view>
+                <view class="main2">{{item.BG_TS_Content}}</view>
+            </view>
+            <view class="topright2" tt:if={{item.BG_Images.length == 1 ? true:false}}>
+                <image src="{{item.BG_Images[0]}}" mode="" />
+            </view>
+        </view>
+
+        <view class="center2" tt:if={{item.BG_Images.length > 1 ? true:false}}>
+            <image src="{{item.BG_Images[0]}}" mode="" />
+            <image src="{{item.BG_Images[1]}}" mode="" />
+            <image src="{{item.BG_Images[2]}}" mode="" />
+        </view>
+
+        <view class="foot">
+            <view class="read">
+                <image src="../../image/read.png" mode="" />
+                <span>{{item.BG_ViewCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/zhichi.png" mode="" />
+                <span>{{item.BG_BackUpCount}}<span>
+            </view>
+            <view class="read">
+                <image src="../../image/history.png" mode="" />
+                <span>{{item.CA_TS_Date}}<span>
+            </view>
+        </view>
+    </view>
+    <image src="../../image/nodata.png" class="img2" mode="" />
+    <view class="foot_p">暂无曝光单</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,10 +1,18 @@
 
 #app{
-    background: skyblue;
+    /* background: skyblue; */
     overflow: hidden;
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 999;
+}
+.banner{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 .box{
     width: 100%;
@@ -19,7 +27,7 @@
     border: 1px solid red;
     border-radius: 40rpx;
     color: red;
-    
+
 }
 .btn_1{
     margin-top: 300rpx;

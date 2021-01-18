@@ -26,14 +26,14 @@
                 <view class="main">{{item.BG_TS_Content}}</view>
             </view>
             <view class="topright" tt:if={{item.BG_Images.length == 1 ? true:false}}>
-                <image src="https://{{item.BG_Images[0]}}" mode="" />
+                <image src="{{item.BG_Images[0]}}" mode="" />
             </view>
         </view>
 
         <view class="center" tt:if={{item.BG_Images.length > 1 ? true:false}}>
-            <image src="https://{{item.BG_Images[0]}}" mode="" />
-            <image src="https://{{item.BG_Images[1]}}" mode="" />
-            <image src="https://{{item.BG_Images[2]}}" mode="" />
+            <image src="{{item.BG_Images[0]}}" mode="" />
+            <image src="{{item.BG_Images[1]}}" mode="" />
+            <image src="{{item.BG_Images[2]}}" mode="" />
         </view>
 
         <view class="foot">

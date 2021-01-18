@@ -24,8 +24,10 @@ Page({
         tabData: '金融',  //选中哪一个tab
         page: 0,  //分页
         dataList: [],  //数据
+        spot:false
     },
     tab(e) {
+        
         // console.log(e.currentTarget.dataset.alphaBeta);
         let ind = e.currentTarget.dataset.alphaBeta
         if (ind == 0) {
@@ -124,7 +126,7 @@ Page({
                 page:0,
                 dataList:[],
             });
-        }
+        };
         this.data.tab.map((item, index) => {
             if (index == e.currentTarget.dataset.alphaBeta) {
                 // console.log(this.data.tab[index]);
@@ -141,6 +143,10 @@ Page({
 
             };
         });
+        tt.showTabBar();
+        this.setData({
+            spot:false
+        })
         this.getdata(this.data.page);
     },
     //获取数据
@@ -161,7 +167,7 @@ Page({
             dataType: " json", // 指定返回数据的类型为 string
             responseType: "text",
             success(res) {
-                // console.log(JSON.parse(JSON.parse(res.data)));
+                console.log(JSON.parse(JSON.parse(res.data)));
                 // console.log("调用成功", res.data);
                 let arr = JSON.parse(JSON.parse(res.data)).Rows.map((item, index) => {
                     // console.log(item);
@@ -170,9 +176,16 @@ Page({
                     if(item.BG_Images == ""){
                         item.BG_Images = [];
                     }
+                   
+                    item.BG_Images.map((t,index)=>{
+                        if(t.indexOf('https') == -1){
+                            item.BG_Images[index] = 'https://' + t;
+                            return t
+                        }
+                    })
                     return item
                 })
-                // console.log(arr);
+                console.log(arr);
                 let c = that.data.dataList.concat(arr)
                 that.setData({
                     dataList:c,
@@ -186,7 +199,8 @@ Page({
     onLoad: function () {
         this.getdata(this.data.page);  //获取数据
     },
-    onPageScroll: function (e) { // 获取滚动条当前位置
+    // 监听滚动事件
+    onPageScroll: function (e) { 
         // console.log(e)
         let that = this;
         let listHeight = ''; //当前屏幕的高度 667
@@ -212,6 +226,19 @@ Page({
                 // console.log(u);
                 that.getdata(that.data.page)
             }
+        })
+    },
+
+    spotImgT(){
+        tt.hideTabBar();
+        this.setData({
+            spot:true
+        })
+    },
+    spotImgF(){
+        tt.showTabBar();
+        this.setData({
+            spot:false
         })
     },
 

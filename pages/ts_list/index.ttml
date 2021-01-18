@@ -1,0 +1,78 @@
+<view class="box">
+    <view class="list">
+        <view class="left">
+            <view class="tit">图</view>
+            <view class="titM">撒打算</view>
+            <view class="time">
+                <image src="../../image/history.png" mode="" />
+                <span>2020-20-20</span>
+            </view>
+        </view>
+        <view class="right" tt:if={{flag}}>
+            <image src="../../image/circle.png" mode="" />
+            <view class="cxts" bindtap="chexiao">撤销投诉</view>
+            <view class="dcl">待处理</view>
+        </view>
+        <view class="right1" tt:if={{!flag}}>
+            <image src="../../image/havRevoke.png" mode="" />
+            <view class="cxts1">已撤回</view>
+        </view>
+    </view>
+
+    <view class="list">
+        <view class="left">
+            <view class="tit">图</view>
+            <view class="titM">撒打算</view>
+            <view class="time">
+                <image src="../../image/history.png" mode="" />
+                <span>2020-20-20</span>
+            </view>
+        </view>
+        <view class="right" tt:if={{!flag}}>
+            <image src="../../image/circle.png" mode="" />
+            <view class="cxts">撤销投诉</view>
+            <view class="dcl">待处理</view>
+        </view>
+        <view class="right1" tt:if={{flag}}>
+            <image src="../../image/havRevoke.png" mode="" />
+            <view class="cxts1">已撤回</view>
+        </view>
+    </view>
+    <view class="my">
+        <span bindtap='toList'>我要投诉</span>
+    </view>
+</view>
+
+<view class="radio" tt:if={{radio}}>
+    <view class="radiobox">
+        <view class="radiosbox">
+            <radio value="ds" checked={{flag1}} bindtap='rad1'/>
+            <span>双方协商和解</span>
+        </view>
+        <view class="radiosbox">
+            <radio value="ds" checked={{flag2}} bindtap='rad2'/>
+            <span>填写内容失败</span>
+        </view>
+        <view class="radiosbox">
+            <radio value="ds" checked={{flag3}} bindtap='rad3'/>
+            <span>其他渠道投诉</span>
+        </view>
+        <view class="radiosbox">
+            <radio value="ds" checked={{flag4}} bindtap='rad4'/>
+            <span>我不想投诉了</span>
+        </view>
+        <view class="radiosbox">
+            <radio value="ds" checked={{flag5}} bindtap='rad5'/>
+            <span>双方未达成一直,准备起诉</span>
+        </view>
+        <view class="radiosbox">
+            <radio value="ds" checked={{flag6}} bindtap='rad6'/>
+            <span>其他</span>
+        </view>
+        <view class="btnbox">
+            <span bindtap="showT">确定</span>
+            <span bindtap="showF">暂不撤销</span>
+        </view>
+    </view>
+</view>
+

@@ -15,6 +15,83 @@
     <span class="{{tab[13]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="13" bindtap='tab'>运营商</span>
     <span class="{{tab[14]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="14" bindtap='tab'>汽车</span>
     <span class="{{tab[15]? 'tabFontT' : 'tabFont'}}" data-alpha-beta="15" bindtap='tab'>其他</span>
+    <span class="spot">
+        <image src="../../image/dian.png" bindtap='spotImgT' class="spotImg" mode="" />
+    </span>
+</view>
+
+<view class="spotBox" tt:if={{spot}}>
+    <view class="header">
+        <span class="hangye">行业类别</span>
+        <image src="../../image/dian2.png" bindtap='spotImgF' mode="" />
+    </view>
+
+    <view class="spotMainBox">
+        <view class="spotMain" data-alpha-beta="0" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[0]? 'spotFootT' : 'spotFootF'}}">金融</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="1" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[1]? 'spotFootT' : 'spotFootF'}}">手机数码</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="2" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[2]? 'spotFootT' : 'spotFootF'}}">食品饮料</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="3" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[3]? 'spotFootT' : 'spotFootF'}}">母婴玩具</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="4" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[4]? 'spotFootT' : 'spotFootF'}}">住宅</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="5" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[5]? 'spotFootT' : 'spotFootF'}}">旅游</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="6" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[6]? 'spotFootT' : 'spotFootF'}}">日用家电</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="7" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[7]? 'spotFootT' : 'spotFootF'}}">化妆</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="8" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[8]? 'spotFootT' : 'spotFootF'}}">医疗保健</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="9" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[9]? 'spotFootT' : 'spotFootF'}}">餐饮</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="10" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[10]? 'spotFootT' : 'spotFootF'}}">水电气</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="11" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[11]? 'spotFootT' : 'spotFootF'}}">快递物流</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="12" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[12]? 'spotFootT' : 'spotFootF'}}">电商</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="13" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[13]? 'spotFootT' : 'spotFootF'}}">运营商</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="14" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[14]? 'spotFootT' : 'spotFootF'}}">汽车</span>
+        </view>
+        <view class="spotMain" data-alpha-beta="15" bindtap='tab'>
+            <image src="../../image/box.png" mode="" />
+            <span class="{{tab[15]? 'spotFootT' : 'spotFootF'}}">其他</span>
+        </view>
+    </view>
 </view>
 
 <view class="list" id="list">
@@ -25,14 +102,14 @@
                 <view class="main">{{item.BG_TS_Content}}</view>
             </view>
             <view class="topright" tt:if={{item.BG_Images.length == 1 ? true:false}}>
-                <image src="https://{{item.BG_Images[0]}}" mode="" />
+                <image src="{{item.BG_Images[0]}}" mode="" />
             </view>
         </view>
 
         <view class="center" tt:if={{item.BG_Images.length > 1 ? true:false}}>
-            <image src="https://{{item.BG_Images[0]}}" mode="" />
-            <image src="https://{{item.BG_Images[1]}}" mode="" />
-            <image src="https://{{item.BG_Images[2]}}" mode="" />
+            <image src="{{item.BG_Images[0]}}" mode="" />
+            <image src="{{item.BG_Images[1]}}" mode="" />
+            <image src="{{item.BG_Images[2]}}" mode="" />
         </view>
 
         <view class="foot">

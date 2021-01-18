@@ -6,7 +6,6 @@
     width: auto;
     overflow-x: scroll;
     height: 100rpx;
-    /* align-items: center; */
     background: #F8F8F8 ;
     position: fixed;
     width: 100%;
@@ -31,7 +30,6 @@
     padding: 0 20rpx;
 }
 .list{
-    /* margin-top: 110rpx; */
     padding-top: 110rpx;
 }
 .listbox{

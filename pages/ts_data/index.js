@@ -59,6 +59,7 @@ Page({
         interXB: "",    //网上消费性别
         interSJHM: "",  //网上消费手机号码
         interYZM: "",   //网上消费验证码
+        yzmShow1: false,
 
         storeQYMC: "",  //实体店消费企业名称
         storeQYDZ: "",  //实体店消费企业地址
@@ -73,6 +74,7 @@ Page({
         storeXB: "",  //实体店消费性别
         storeSJHM: "",    //实体店消费手机号码
         storeYZM: "",    //实体店消费验证码
+        yzmShow2: false,
 
         tvDST: "",  //电视消费电视台
         tvJMMC: "",  //电视消费节目名称
@@ -86,6 +88,7 @@ Page({
         tvXB: "",  //电视消费性别
         tvSJHM: "",    //电视消费手机号码
         tvYZM: "",    //电视消费验证码
+        yzmShow3: false,
     },
     //点击网上消费
     tab1() {
@@ -221,63 +224,104 @@ Page({
             },
         });
     },
-    handleBlur1(e) {
+    handleConfirm1(e) {
         console.log(e.detail.value);
     },
-    handleBlur2(e) {
+    handleConfirm2(e) {
         console.log(e.detail.value);
     },
-    handleBlur3(e) {
+    handleConfirm3(e) {
         console.log(e.detail.value);
     },
-    handleBlur4(e) {
+    handleConfirm4(e) {
         console.log(e.detail.value);
     },
-    handleBlur5(e) {
+    handleConfirm5(e) {
         console.log(e.detail.value);
     },
-    handleBlur6(e) {
+    handleConfirm6(e) {
         console.log(e.detail.value);
     },
-    handleBlur7(e) {
+    handleConfirm7(e) {
         console.log(e.detail.value);
     },
-    handleBlur8(e) {
+    handleConfirm8(e) {
         console.log(e.detail.value);
     },
-    handleBlur9(e) {
+    handleConfirm9(e) {
+        // console.log(e);
         console.log(e.detail.value);
+        this.setData({
+            interSJHM: e.detail.value
+        })
     },
-    handleBlur10(e) {
+    handleConfirm10(e) {
         console.log(e.detail.value);
     },
     //获取验证码
     getnum1() {
         let that = this;
+        // console.log(that.data.interSJHM,5);
         if (this.data.getnumT) {
             that.setData({
                 getnumT: false,
             });
-            var time = 60;
-            that.setData({
-                getnum1: time + 's',
-            });
-            // $(this).html(time + "s")
-            let timer = setInterval(function () {
-                time--;
+            if (!(/^1(3[0-9]|4[5,7]|5[0,1,2,3,5,6,7,8,9]|6[2,5,6,7]|7[0,1,7,8]|8[0-9]|9[1,8,9])\d{8}$/.test(that.data.interSJHM))) {
+                tt.showToast({ title: "请输入正确手机号" });
+                that.setData({
+                    getnumT: true
+                })
+                return false;
+            } else {
+                var time = 60;
                 that.setData({
                     getnum1: time + 's',
                 });
-                if (time == 0) {
-                    clearInterval(timer);
+                let timer = setInterval(function () {
+                    time--;
                     that.setData({
-                        getnum1: '获取验证码',
+                        getnum1: time + 's',
                     });
-                    that.setData({
-                        getnumT: true,
-                    });
-                }
-            }, 1000);
+                    if (time == 0) {
+                        clearInterval(timer);
+                        that.setData({
+                            getnum1: '获取验证码',
+                        });
+                        that.setData({
+                            getnumT: true,
+                        });
+                    }
+                }, 1000);
+
+                let flag = "";
+                for (var i = 0; i < 5; i++) {
+                    flag += Math.floor(Math.random() * 10)
+                };
+
+
+                tt.request({
+                    url: "https://webservice.jshcsoft.com/SSMSAPI/SendMsgAPI.ashx",
+                    data: {
+                        tele: Number(this.data.interSJHM),
+                        msg: `验证码为:${flag}请在5分钟内按页面提示提交验证码。`
+                    },
+                    header: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    method: "POST",
+                    dataType: " json",
+                    responseType: "text",
+                    success(res) {
+                        // console.log(res);
+                        that.setData({
+                            yzmShow1: true
+                        })
+                    },
+                    fail(res) {
+                        console.log("调用失败", res.errMsg);
+                    },
+                });
+            }
         }
     },
 
@@ -347,60 +391,100 @@ Page({
             btn8: !this.data.btn8
         })
     },
-    handleBlur11(e) {
+    handleConfirm11(e) {
         console.log(e.detail.value);
     },
-    handleBlur12(e) {
+    handleConfirm12(e) {
         console.log(e.detail.value);
     },
-    handleBlur13(e) {
+    handleConfirm13(e) {
         console.log(e.detail.value);
     },
-    handleBlur14(e) {
+    handleConfirm14(e) {
         console.log(e.detail.value);
     },
-    handleBlur15(e) {
+    handleConfirm15(e) {
         console.log(e.detail.value);
     },
-    handleBlur16(e) {
+    handleConfirm16(e) {
         console.log(e.detail.value);
     },
-    handleBlur17(e) {
+    handleConfirm17(e) {
         console.log(e.detail.value);
     },
-    handleBlur18(e) {
+    handleConfirm18(e) {
         console.log(e.detail.value);
+        this.setData({
+            storeSJHM: e.detail.value
+        })
     },
-    handleBlur19(e) {
+    handleConfirm19(e) {
         console.log(e.detail.value);
     },
     //获取验证码
     getnum2() {
         let that = this;
+        // console.log(that.data.interSJHM,5);
         if (this.data.getnumF) {
             that.setData({
                 getnumF: false,
             });
-            var time = 60;
-            that.setData({
-                getnum2: time + 's',
-            });
-            // $(this).html(time + "s")
-            let timer = setInterval(function () {
-                time--;
+            if (!(/^1(3[0-9]|4[5,7]|5[0,1,2,3,5,6,7,8,9]|6[2,5,6,7]|7[0,1,7,8]|8[0-9]|9[1,8,9])\d{8}$/.test(that.data.storeSJHM))) {
+                tt.showToast({ title: "请输入正确手机号" });
+                that.setData({
+                    getnumF: true
+                })
+                return false;
+            } else {
+                var time = 60;
                 that.setData({
                     getnum2: time + 's',
                 });
-                if (time == 0) {
-                    clearInterval(timer);
+                let timer = setInterval(function () {
+                    time--;
                     that.setData({
-                        getnum2: '获取验证码',
+                        getnum2: time + 's',
                     });
-                    that.setData({
-                        getnumF: true,
-                    });
-                }
-            }, 1000);
+                    if (time == 0) {
+                        clearInterval(timer);
+                        that.setData({
+                            getnum2: '获取验证码',
+                        });
+                        that.setData({
+                            getnumF: true,
+                        });
+                    }
+                }, 1000);
+
+                let flag = "";
+                for (var i = 0; i < 5; i++) {
+                    flag += Math.floor(Math.random() * 10)
+                };
+
+
+                tt.request({
+                    url: "https://webservice.jshcsoft.com/SSMSAPI/SendMsgAPI.ashx",
+                    data: {
+                        tele: Number(this.data.storeSJHM),
+                        msg: `验证码为:${flag}请在5分钟内按页面提示提交验证码。`
+                    },
+                    header: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    method: "POST",
+                    dataType: " json",
+                    responseType: "text",
+                    success(res) {
+                        // console.log(res);
+                        that.setData({
+                            yzmShow2: true
+                        })
+                    },
+                    fail(res) {
+                        console.log("调用失败", res.errMsg);
+                    },
+                });
+            }
         }
     },
 
@@ -452,60 +536,100 @@ Page({
     onTextConfirm1: function (e) {
         // tt.showToast({ title: "confirm" });
     },
-    handleBlur20(e) {
+    handleConfirm20(e) {
         console.log(e.detail.value);
     },
-    handleBlur21(e) {
+    handleConfirm21(e) {
         console.log(e.detail.value);
     },
-    handleBlur22(e) {
+    handleConfirm22(e) {
         console.log(e.detail.value);
     },
-    handleBlur23(e) {
+    handleConfirm23(e) {
         console.log(e.detail.value);
     },
-    handleBlur24(e) {
+    handleConfirm24(e) {
         console.log(e.detail.value);
     },
-    handleBlur25(e) {
+    handleConfirm25(e) {
         console.log(e.detail.value);
     },
-    handleBlur26(e) {
+    handleConfirm26(e) {
         console.log(e.detail.value);
     },
-    handleBlur27(e) {
+    handleConfirm27(e) {
         console.log(e.detail.value);
+        this.setData({
+            tvSJHM: e.detail.value
+        })
     },
-    handleBlur28(e) {
+    handleConfirm28(e) {
         console.log(e.detail.value);
     },
     //获取验证码
     getnum3() {
         let that = this;
+        // console.log(that.data.interSJHM,5);
         if (this.data.getnumX) {
             that.setData({
                 getnumX: false,
             });
-            var time = 60;
-            that.setData({
-                getnum3: time + 's',
-            });
-            // $(this).html(time + "s")
-            let timer = setInterval(function () {
-                time--;
+            if (!(/^1(3[0-9]|4[5,7]|5[0,1,2,3,5,6,7,8,9]|6[2,5,6,7]|7[0,1,7,8]|8[0-9]|9[1,8,9])\d{8}$/.test(that.data.tvSJHM))) {
+                tt.showToast({ title: "请输入正确手机号" });
+                that.setData({
+                    getnumX: true
+                })
+                return false;
+            } else {
+                var time = 60;
                 that.setData({
                     getnum3: time + 's',
                 });
-                if (time == 0) {
-                    clearInterval(timer);
+                let timer = setInterval(function () {
+                    time--;
                     that.setData({
-                        getnum3: '获取验证码',
+                        getnum3: time + 's',
                     });
-                    that.setData({
-                        getnumX: true,
-                    });
-                }
-            }, 1000);
+                    if (time == 0) {
+                        clearInterval(timer);
+                        that.setData({
+                            getnum3: '获取验证码',
+                        });
+                        that.setData({
+                            getnumX: true,
+                        });
+                    }
+                }, 1000);
+
+                let flag = "";
+                for (var i = 0; i < 5; i++) {
+                    flag += Math.floor(Math.random() * 10)
+                };
+
+
+                tt.request({
+                    url: "https://webservice.jshcsoft.com/SSMSAPI/SendMsgAPI.ashx",
+                    data: {
+                        tele: Number(this.data.tvSJHM),
+                        msg: `验证码为:${flag}请在5分钟内按页面提示提交验证码。`
+                    },
+                    header: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    method: "POST",
+                    dataType: " json",
+                    responseType: "text",
+                    success(res) {
+                        // console.log(res);
+                        that.setData({
+                            yzmShow3: true
+                        })
+                    },
+                    fail(res) {
+                        console.log("调用失败", res.errMsg);
+                    },
+                });
+            }
         }
     },
 

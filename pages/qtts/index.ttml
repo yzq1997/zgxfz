@@ -1,5 +1,5 @@
 <view class="box" id="box">
-    <view class="title" tt:for="{{dataList}}" bindtap='toList'>
+    <view class="title" tt:for="{{dataList}}" bindtap='toList' data-alpha-beta="{{item.ID}}" data-alpha-beta1="{{item.IE_RelationCode}}">
         <span class="tit">{{item.IE_Title}}</span>
         <view class="name">
             <span>曝光主体</span>

@@ -1,0 +1,138 @@
+    <!-- 连接处 -->
+<view class="ljc ljone"></view>
+<view class="ljc ljtwo"></view>
+<view class="article">
+    <!-- 卡片1 -->
+    <view class="jcinfo">
+        <view class="one">
+            <view></view>
+            <view></view>
+        </view>
+        <view class="two">
+            <image src="../../image/case_bq.png" alt="" />  
+            <label>NO.1234568</label>
+        </view>
+        <view class="thr">
+            <label for="">{{detailData.BG_Title}}</label>
+            <span>
+                <label for="">投诉企业：</label>
+                <label for="">{{detailData.BG_Entity_Name}}（被投诉{{detailData.Company_Counts}}次）</label>
+            </span>
+            <span>
+                <label for="">投诉要求：</label>
+                <label for="">{{detailData.CA_TS_ClaimWays}}</label>
+            </span>
+            <span>
+                <label for="">涉及金额：</label>
+                <label for="">{{detailData.CA_TS_Price}}元</label>
+            </span>
+            <span>
+                <label for="">投诉日期：</label>
+                <label for="">{{detailData.CA_TS_Date}}</label>
+            </span>
+        </view>
+    </view>
+
+    <view class="ljc ljthr"></view>
+    <view class="ljc ljfor"></view>
+        <!-- 卡片2 -->
+    <view class="help">
+        <view class="one">
+            <view></view>
+            <view></view>
+        </view>
+        <view class="two">
+            <span>
+                <label for="">好友支持</label>
+                <label for="">({{supperList.TotalCount}})</label>
+            </span>
+        </view>
+        <view class="thr">
+            <image tt:for="{{supperList.Rows}}"  src="{{item.SS_Photo}}"  alt="" />
+        </view>
+        <view class="zlbtn"> 
+            <image src="../../image/zl.png" alt="">
+        </view>
+    </view>
+</view>
+
+<view class="complainBtn">
+    <view class="complainHim">一起投诉他</view>
+</view>
+
+<view class="handleProcess">
+    <view>处理进度<span class="processPercent">100%</span></view>
+    <view class="processSpeed">
+        <view class="nowPercent" style="width: 600rpx;"></view>
+    </view>
+</view>
+
+<view class="process">
+    <view class="lc">
+        <view class="left" tt:if={{tsTotalCount>0}}>
+            <view class="dian"></view>
+            <view class="xx" style = "height:{{fqheight}}px" ></view>
+        </view>
+        <view class="left" tt:if={{tsTotalCount>1}}>
+            <view class="dian"></view>
+            <view class="xx" style = "height:{{tgheight}}px" ></view>
+        </view>
+        <view class="left" tt:if={{tsTotalCount>2}}>
+            <view class="dian"></view>
+            <view class="xx" style = "height:{{csheight}}px" ></view>
+        </view>
+    </view>
+
+    <view class="content">
+        <view class="fqts" tt:if={{tsTotalCount>0}}>
+            <span>{{tsData[0].CP_DateTime}}</span>
+            <view class="fqtscontent" id="fq">
+                <view class="one">
+                    <!-- <image src="../../image/tt.jpg" alt="" /> -->
+                    <span>{{tsData[0].CP_Users}}</span>
+                    <span>发起投诉</span>
+                </view>
+                <view class="two">
+                    <view class="title"> {{tsData[0].CP_Comments}}</view>
+                    <view class="tsimg">
+                        <image tt:for="{{tsData[0].Photos}}"  src="{{item}}"  alt="" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="fqts" tt:if={{tsTotalCount>1}}>
+            <span>{{tsData[1].CP_DateTime}}</span>
+            <view class="fqtscontent" id="tg">
+                <view class="one">
+                    <span>{{tsData[1].CP_Users}}</span>
+                    <span>审核通过</span>
+                </view>
+                <view class="two">
+                    <view class="title"> {{tsData[1].CP_Comments}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="fqts" tt:if={{tsTotalCount>2}}>
+            <span>{{tsData[2].CP_DateTime}}</span>
+            <view class="fqtscontent" id="cs">
+                <view class="one">
+                    <span>{{tsData[2].CP_Users}}</span>
+                    <span>投诉撤销</span>
+                </view>
+                <view class="two">
+                    <view class="title"> {{tsData[2].CP_Comments}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="publishComment">
+    <input type="text" placeholder="发表评论" class="submitComment" />
+    <view class="submit">发送</view>
+</view>
+
+
+  

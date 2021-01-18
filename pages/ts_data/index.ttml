@@ -15,17 +15,16 @@
     </view>
 
     
-    
     <view class="" tt:if={{tab1}}>
         <view class="userdata">基本信息</view>
         <view class="userBox">
             <view class="gmpt">
                 <span class="">购买平台<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur1" type="text" value="" placeholder="请输入购买平台"/>
+                <input class="input1" bindinput ="handleConfirm1" type="text" value="" placeholder="请输入购买平台"/>
             </view>
             <view class="gmpt">
                 <span class="">店铺名称<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur2" type="text" value="" placeholder="请输入店铺名称"/>
+                <input class="input1" bindinput ="handleConfirm2" type="text" value="" placeholder="请输入店铺名称"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">店铺形式<span class="bx">*</span></span>
@@ -53,11 +52,11 @@
             </view>
             <view class="gmpt">
                 <span class="">订单号码<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur3" type="text" value="" placeholder="请输入订单号或账号"/>
+                <input class="input1" bindinput ="handleConfirm3" type="text" value="" placeholder="请输入订单号或账号"/>
             </view>
             <view class="gmpt">
                 <span class="">联系电话<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur4" type="number" value="" placeholder="请输入企业联系电话"/>
+                <input class="input1" bindinput ="handleConfirm4" type="number" value="" placeholder="请输入企业联系电话"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">行业类型<span class="bx">*</span></span>
@@ -70,15 +69,15 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">品牌</span>
-                <input class="input1" bindblur="handleBlur5" type="text" value="" placeholder="请输入品牌"/>
+                <input class="input1" bindinput ="handleConfirm5" type="text" value="" placeholder="请输入品牌"/>
             </view>
             <view class="gmpt">
                 <span class="">型号</span>
-                <input class="input1" bindblur="handleBlur6" type="text" value="" placeholder="请输入型号"/>
+                <input class="input1" bindinput ="handleConfirm6" type="text" value="" placeholder="请输入型号"/>
             </view>
             <view class="gmpt">
                 <span class="">涉及金额<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur7" type="number" value="" placeholder="请输入涉及金额"/>
+                <input class="input1" bindinput ="handleConfirm7" type="number" value="" placeholder="请输入涉及金额"/>
             </view>
         </view>
 
@@ -87,9 +86,9 @@
             <textarea
                 class="textarea"
                 bindfocus="onTextFocus"
-                bindblur="onTextBlur"
+                bindinput ="onTextBlur"
                 bindinput="onTextInput"
-                bindconfirm="onTextConfirm"
+                bindinput="onTextConfirm"
                 placeholder="请输入您想投诉的内容"
             />
         </view>
@@ -114,7 +113,7 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">姓名<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur8" type="text" value="" placeholder="请输入您的姓名"/>
+                <input class="input1" bindinput ="handleConfirm8" type="text" value="" placeholder="请输入您的姓名"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">性别<span class="bx">*</span></span>
@@ -130,12 +129,12 @@
             </view>
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
-                <input class="input1 phone1" bindblur="handleBlur9" type="number" value="" placeholder="请输入手机号码"/>
+                <input class="input1 phone1" bindinput="handleConfirm9" placeholder="请输入手机号码"/>
                 <button class="yzm" bindtap='getnum1'>{{getnum1}}</button>
             </view>
             <view class="gmpt">
                 <span class="yzmnum">验证码<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur10" type="text" value="" placeholder="请输入验证码"/>
+                <input class="input1" bindinput ="handleConfirm10" type="text" value="" placeholder="请输入验证码"/>
             </view>
         </view>
 
@@ -147,7 +146,7 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">企业名称<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur11" type="text" value="" placeholder="请输入企业名称"/>
+                <input class="input1" bindinput ="handleConfirm11" type="text" value="" placeholder="请输入企业名称"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">企业地址<span class="bx">*</span></span>
@@ -163,11 +162,11 @@
             </view>
             <view class="gmpt">
                 <span class="">详细地址<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur12" type="text" value="" placeholder="请输入详细地址"/>
+                <input class="input1" bindinput ="handleConfirm12" type="text" value="" placeholder="请输入详细地址"/>
             </view>
             <view class="gmpt">
                 <span class="">联系电话<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur13" type="number" value="" placeholder="请输入企业联系电话"/>
+                <input class="input1" bindinput ="handleConfirm13" type="number" value="" placeholder="请输入企业联系电话"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">行业类型<span class="bx">*</span></span>
@@ -187,15 +186,15 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">品牌</span>
-                <input class="input1" bindblur="handleBlur14" type="text" value="" placeholder="请输入品牌"/>
+                <input class="input1" bindinput ="handleConfirm14" type="text" value="" placeholder="请输入品牌"/>
             </view>
             <view class="gmpt">
                 <span class="">型号</span>
-                <input class="input1" bindblur="handleBlur15" type="text" value="" placeholder="请输入型号"/>
+                <input class="input1" bindinput ="handleConfirm15" type="text" value="" placeholder="请输入型号"/>
             </view>
             <view class="gmpt">
                 <span class="">涉及金额<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur16" type="number" value="" placeholder="请输入涉及金额"/>
+                <input class="input1" bindinput ="handleConfirm16" type="number" value="" placeholder="请输入涉及金额"/>
             </view>
         </view>
 
@@ -204,9 +203,9 @@
             <textarea
                 class="textarea"
                 bindfocus="onTextFocus1"
-                bindblur="onTextBlur1"
+                bindinput ="onTextBlur1"
                 bindinput="onTextInput1"
-                bindconfirm="onTextConfirm1"
+                bindinput="onTextConfirm1"
                 placeholder="请输入您想投诉的内容"
             />
         </view>
@@ -231,7 +230,7 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">姓名<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur17" type="text" value="" placeholder="请输入您的姓名"/>
+                <input class="input1" bindinput ="handleConfirm17" type="text" value="" placeholder="请输入您的姓名"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">性别<span class="bx">*</span></span>
@@ -247,12 +246,12 @@
             </view>
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
-                <input class="input1 phone1" bindblur="handleBlur18" type="number" value="" placeholder="请输入手机号码"/>
+                <input class="input1 phone1" bindinput ="handleConfirm18" type="number" value="" placeholder="请输入手机号码"/>
                 <button class="yzm" bindtap='getnum2'>{{getnum2}}</button>
             </view>
             <view class="gmpt">
                 <span class="yzmnum">验证码<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur19" type="text" value="" placeholder="请输入验证码"/>
+                <input class="input1" bindinput ="handleConfirm19" type="text" value="" placeholder="请输入验证码"/>
             </view>
         </view>
 
@@ -264,15 +263,15 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="yzmnum">电视台<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur20" type="text" value="" placeholder="请输入电视台"/>
+                <input class="input1" bindinput ="handleConfirm20" type="text" value="" placeholder="请输入电视台"/>
             </view>
             <view class="gmpt">
                 <span class="">节目名称<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur21" type="text" value="" placeholder="请输入电视台"/>
+                <input class="input1" bindinput ="handleConfirm21" type="text" value="" placeholder="请输入电视台"/>
             </view>
             <view class="gmpt">
                 <span class="">联系电话<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur22" type="number" value="" placeholder="请输入企业联系电话"/>
+                <input class="input1" bindinput ="handleConfirm22" type="number" value="" placeholder="请输入企业联系电话"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">行业类型<span class="bx">*</span></span>
@@ -292,15 +291,15 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">品牌</span>
-                <input class="input1" bindblur="handleBlur23" type="text" value="" placeholder="请输入品牌"/>
+                <input class="input1" bindinput ="handleConfirm23" type="text" value="" placeholder="请输入品牌"/>
             </view>
             <view class="gmpt">
                 <span class="">型号</span>
-                <input class="input1" bindblur="handleBlur24" type="text" value="" placeholder="请输入型号"/>
+                <input class="input1" bindinput ="handleConfirm24" type="text" value="" placeholder="请输入型号"/>
             </view>
             <view class="gmpt">
                 <span class="">涉及金额<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur25" bindblur="handleBlur1" type="number" value="" placeholder="请输入涉及金额"/>
+                <input class="input1" bindinput ="handleConfirm25" bindinput ="handleConfirm1" type="number" value="" placeholder="请输入涉及金额"/>
             </view>
         </view>
 
@@ -309,9 +308,9 @@
             <textarea
                 class="textarea"
                 bindfocus="onTextFocus2"
-                bindblur="onTextBlur2"
+                bindinput ="onTextBlur2"
                 bindinput="onTextInput2"
-                bindconfirm="onTextConfirm2"
+                bindinput="onTextConfirm2"
                 placeholder="请输入您想投诉的内容"
             />
         </view>
@@ -336,7 +335,7 @@
         <view class="userBox">
             <view class="gmpt">
                 <span class="">姓名<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur26" type="text" value="" placeholder="请输入您的姓名"/>
+                <input class="input1" bindinput ="handleConfirm26" type="text" value="" placeholder="请输入您的姓名"/>
             </view>
             <view class="gmpt dpxs">
                 <span class="">性别<span class="bx">*</span></span>
@@ -352,12 +351,12 @@
             </view>
             <view class="gmpt">
                 <span class="">手机号码<span class="bx">*</span></span>
-                <input class="input1 phone1" bindblur="handleBlur27" type="number" value="" placeholder="请输入手机号码"/>
+                <input class="input1 phone1" bindinput ="handleConfirm27" type="number" value="" placeholder="请输入手机号码"/>
                 <button class="yzm" bindtap='getnum3'>{{getnum3}}</button>
             </view>
             <view class="gmpt">
                 <span class="yzmnum">验证码<span class="bx">*</span></span>
-                <input class="input1" bindblur="handleBlur28" type="text" value="" placeholder="请输入验证码"/>
+                <input class="input1" bindinput ="handleConfirm28" type="text" value="" placeholder="请输入验证码"/>
             </view>
         </view>
 

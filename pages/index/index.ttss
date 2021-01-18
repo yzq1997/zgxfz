@@ -1,8 +1,61 @@
-.banner{
-    height: 166px;
+#banner {
+    position: relative;
+    height: 340rpx;
     width: 100%;
-    background: pink;
 }
+#banner>image{
+    height: 340rpx;
+}
+
+
+.totalAccept {
+    position: absolute;
+    left: 325rpx;
+    top: 73rpx;
+    font-size: 26rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(51,51,51,1);
+    line-height: 20rpx;
+}
+
+.totalComplain {
+    position: absolute;
+    left: 325rpx;
+    top: 172rpx;
+    font-size: 26rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(51,51,51,1);
+    line-height: 20rpx;
+}
+
+.acceptNum {
+    font-size: 50rpx;
+    font-family: PingFang-SC-Medium;
+    color: rgba(196,36,29,1);
+    line-height: 58rpx;
+}
+
+.search {
+    width: 537rpx;
+    height: 54rpx;
+    border: 8rpx solid rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: rgba(255,255,255,1);
+    border-radius: 25px;
+    background-image: url(../Images/icon_search.png);
+    background-repeat: no-repeat;
+    background-size: 6%;
+    background-position: 9% 50%;
+    font-size: 26rpx;
+    font-family: PingFang-SC-Regular;
+    color: rgba(153,153,153,1);
+    line-height: 54rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -265rpx;
+    bottom: -35rpx;
+}
+
 
 .inp{
     font-size: 12px;
@@ -18,7 +71,22 @@
 }
 
 .tab{
+    height: auto;
+    overflow: hidden;
+    width: 100%;
     margin-top: 50px;
+}
+.tabdw{
+    position: fixed;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 0px;
+    background-color: #FFFFFF;
+    top: 0;
+}
+.tabtitle{
+    
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid #eee;
@@ -43,45 +111,215 @@
 }
 .title{
     margin-top: 10px;
+    display: -webkit-flex;
+    height: 40rpx;
 }
 .hot{
-    border: 1px solid red;
-    font-size: 14px;
-    line-height: 16px;
-    color: red;
-    border-radius: 3px;
-    padding: 0 5px;
+    height: 32rpx;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Regular;
+    line-height: 32rpx;
+    border-radius: 4rpx;
+    margin-right: 13rpx;
+    text-align: center;
+    border: 1px solid #F62B36;
+    color: rgba(246,43,54,1);
+    box-sizing: border-box;
+    margin-top: 4rpx;
+    -webkit-flex: 0.1;
 }
 .tit{
-    display: -webkit-box;             
-    -webkit-box-orient: vertical;     
-    -webkit-line-clamp: 1;            
-    overflow: hidden;                 
-    font-size: 16px;
-    line-height: 16px;
-    font-family: PingFang-SC-Regular;
+    font-size: 34rpx;
+    ont-family: PingFang-SC-Medium;
+    color: rgba(26,26,26,1);
+    line-height: 40rpx;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 100%;
+    -webkit-flex: 0.85;
+}
+.zxtit{
+    font-size: 34rpx;
+    ont-family: PingFang-SC-Medium;
+    color: rgba(26,26,26,1);
+    line-height: 40rpx;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 100%;
 }
 .main{
+    font-size: 28rpx;
+    font-family: PingFang-SC-Regular;
+    color: rgba(102,102,102,1);
+    line-height: 40rpx;
+    margin-top: 15rpx;
     display: -webkit-box;             
     -webkit-box-orient: vertical;     
     -webkit-line-clamp: 2;            
     overflow: hidden; 
-    margin-top: 5px;
-    font-size: 16px;
+
     font-family: PingFang-SC-Regular;
 }
 .img{
     display: flex;
-    height: 100px;
+    /* height: 100px; */
+    margin-top: 10rpx;
 }
 .img>image{
-    height: 100%;
+    height: 165rpx;
+    width: 220rpx;
+    margin-left: 10rpx;
 }
 .time>span{
     margin-right: 20px;
     font-size: 16px;
     color: #999;
     font-family: PingFang-SC-Regular;
+}
+
+.listInfo {
+    display: flex;
+    display: -webkit-flex;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Regular;
+    color: rgba(153,153,153,1);
+    line-height: 60rpx;
+}
+.listRead:first-child{
+    width:180rpx;
+}
+.listRead:nth-child(2) {
+    width: 100rpx;
+}
+.listRead {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.listRead image{
+    width: 30rpx;
+    height: 30rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-right: 6rpx;
+}
+
+.readImg {
+    width: 30rpx;
+    height: 46rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-right: 6rpx;
+}
+
+.supportImg {
+    width: 34rpx;
+    height:48rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.timeImg {
+    width: 34rpx;
+    height: 48rpx;;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.loadFinishData{
+    width: 100%;
+    height: 120rpx;
+    background-color: #f2f2f2;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Regular;
+    color: rgba(102,102,102,1);
+    line-height: 120rpx;
+    text-align: center;
+}
+
+.application {
+    width: 110rpx;
+    height: 110rpx;
+    text-align: center;
+    position: fixed;
+    /* background-image: url(../Images/circular.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-overflow-scrolling: touch;
+    bottom: 300rpx;
+    right: 50rpx;
+    z-index: 9999;
+    background-color: chocolate;
+    border-radius:10rpx
+}
+
+.epApplication {
+    width:110rpx;
+    height:110rpx;
+    position: relative;
+    color: #fff;
+    font-size: 20rpx;
+
+}
+.epCenter {
+    font-size:28rpx;
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-40rpx;
+    margin-top:-43rpx;
+    
+}
+
+.application .close {
+    width: 33rpx;
+    height: 32rpx;
+    text-align: center;
+    position: absolute;
+    /* background-image: url(../Images/sider.png); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 20rpx;
+    top: -25rpx;
+    right: -25rpx;
+   
+}
+
+.application .close {
+    font-size: 10rpx;
+    line-height: 25rpx;
+}
+.application .close>image{
+    width: 33rpx;
+    height: 32rpx;
+}
+
+.backTop{
+    width: 100rpx;
+    height: 100rpx;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-image: url(); */
+    position: fixed;
+    right: 21rpx;
+    bottom: 160rpx;
+}
+.backTop >image{
+    width: 100rpx;
+    height: 100rpx;
 }
 
 

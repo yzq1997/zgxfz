@@ -205,6 +205,12 @@ Page({
                     if (item.BG_Images == "") {
                         item.BG_Images = [];
                     }
+                    item.BG_Images.map((t,index)=>{
+                        if(t.indexOf('https') == -1){
+                            item.BG_Images[index] = 'https://' + t;
+                            return t
+                        }
+                    })
                     return item
                 })
                 // console.log(arr);
@@ -228,14 +234,14 @@ Page({
         //         console.log(`getUserInfo 调用失败`);
         //     },
         // })
-        tt.login({
-            success(res) {
-                console.log(`login 调用成功${res.code} ${res.anonymousCode}`);
-            },
-            fail(res) {
-                console.log(`login 调用失败`);
-            },
-        })
+        // tt.login({
+        //     success(res) {
+        //         console.log(`login 调用成功${res.code} ${res.anonymousCode}`);
+        //     },
+        //     fail(res) {
+        //         console.log(`login 调用失败`);
+        //     },
+        // })
     },
     onPageScroll: function (e) { // 获取滚动条当前位置
         // console.log(e)
@@ -249,8 +255,6 @@ Page({
             }
         });
 
-        //1866-667 1199  1311
-        //1866-619 1247  1311
         let query = tt.createSelectorQuery();
         query.select('#list').boundingClientRect()
         query.exec(function (res) {
@@ -259,9 +263,7 @@ Page({
                 that.setData({
                     page: that.data.page + 1
                 });
-                // console.log(4);
-                // console.log(u);
-                that.getdata(that.data.page)
+                that.getdata(that.data.page);
             }
         })
     },

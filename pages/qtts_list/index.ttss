@@ -2,9 +2,10 @@
     /* padding: 0 10px; */
     
 }
-.title{
+.title1{
     overflow: hidden;
     border-bottom: 20rpx solid #F2F2F2;
+    position: relative;
 }
 .tit{
     padding: 0 20rpx;
@@ -28,15 +29,38 @@
     padding: 2rpx 10rpx;
     margin-right: 20rpx;
     margin-left: 20rpx;
+    font-size: 28rpx;
 }
 .name>span:nth-of-type(2){
     color: #999;
+    font-size: 28rpx;
 }
 image{
     margin-top: 10rpx;
     width: 100%;
     height: 400rpx;
-    border-bottom: 1px solid #666;
+    /* border-bottom: 1px solid #666; */
+}
+.tsnum{
+    width: 30%;
+    height: 48rpx;
+    background: pink;
+    position: absolute;
+    /* bottom: 60rpx; */
+    top: 474rpx;
+    background: url('https://weixin.jshcsoft.com/weixin_zgxfz/Images/biaoqian.png') no-repeat;
+    background-size: cover;
+    padding-left: 100rpx;
+    color: #fff;
+    line-height: 48rpx;
+    font-size: 28rpx;
+}
+.main1{
+    font-size: 28rpx;
+    padding: 30rpx 20rpx;
+    font-family: PingFang-SC-Medium;
+    text-indent: 2em;
+    line-height: 40rpx;
 }
 .time{
     display: flex;
@@ -77,40 +101,55 @@ image{
     background: red;
     margin-right: 20rpx;
 }
-.listbox{
-    background: #F2F2F2;
-}
 .list{
-    padding: 0 5% 20rpx;
+    /* background: #F2F2F2; */
+}
+
+
+.listbox{
+    padding: 40rpx 20rpx 20rpx;
     border-bottom: 1px solid #eee;
-    background: #fff;
-    overflow: hidden;
 }
-.listTit{
-    display: -webkit-box;             
-    -webkit-box-orient: vertical;     
-    -webkit-line-clamp: 1;            
-    overflow: hidden;
-    /* font-family: PingFang-SC-Regular; */
-    margin: 20rpx 0;
-    color: #333;
+.top{
+    display: flex;
+    justify-content: space-between;
 }
-.listMain{
+.topright>image{
+    width: 200rpx;
+    height: 160rpx;
+}
+.title{
     display: -webkit-box;             
-    -webkit-box-orient: vertical;     
+    -webkit-box-orient: vertical;   
+    font-family: PingFang-SC-Medium;
+    color: rgba(26,26,26,1);
     -webkit-line-clamp: 1;            
-    overflow: hidden;
-    font-family: PingFang-SC-Regular;
+    overflow: hidden;  
+    font-size: 32rpx;
+    margin: 8rpx 0;
+}
+.main{
+    display: -webkit-box;             
+    -webkit-box-orient: vertical;   
+    font-family: PingFang;   
+    -webkit-line-clamp: 2;            
+    overflow: hidden;  
     font-size: 28rpx;
-    color: #999;
-    margin: 20rpx 0;
+    margin: 8rpx 0;
 }
-.listTime{
+.center{
+    display: flex;
+    /* height: 200rpx; */
+}
+.center>image{
+    height: 200rpx;
+}
+.foot{
     display: flex;
     align-items: center;
     height: 50rpx;
 }
-.listTime>view{
+.foot>view{
     margin-right: 100rpx;
     font-size: 32rpx;
     color: #999;
@@ -120,13 +159,17 @@ image{
     display: flex;
     align-items: center;
 }
+.read>span{
+    font-size: 28rpx;
+    color: rgba(153,153,153,1);
+}
 .read>image{
     width: 40rpx;
     height: 40rpx;
-    border: 0;
-    margin: 0;
 }
-.foot{
+
+
+.foot1{
     text-align: center;
     line-height: 140rpx;
     height: 140rpx;

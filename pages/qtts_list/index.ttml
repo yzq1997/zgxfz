@@ -1,69 +1,56 @@
 <view class="box">
-    <view class="title" bindtap='toList'>
-        <span class="tit">撒上单阿三打阿萨阿萨实打实打算撒打撒打大苏打啊</span>
+    <view class="title1" bindtap='toList'>
+        <span class="tit">{{title}}</span>
         <view class="name">
             <span>曝光主体</span>
-            <span>某某某</span>
+            <span>{{from}}</span>
         </view>
-        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg&refer=http%3A%2F%2Fa4.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612419809&t=727fe75fe12778ae879bf6a442814156" mode="" />
-        <view class="time">
-            <view class="read">
-                <image src="../../image/read.png" mode="" />
-                <span>1221<span>
-            </view>
-            <view class="read">
-                <image src="../../image/zhichi.png" mode="" />
-                <span>1221<span>
-            </view>
-            <view class="read">
-                <image src="../../image/history.png" mode="" />
-                <span>1221<span>
-            </view>
+        <image src="{{imgurl}}" mode="" />
+        <view class="tsnum">
+            已有<span>{{tsNum}}</span>条投诉
         </view>
+
+        <view class="main1">{{main}}</view>
     </view>
     <view class="tslist">
         <span></span>
         <span>投诉列表</span>
     </view>
 
-    <view class="listbox">
-        <view class="list">
-            <view class="listTit">大苏打撒打大苏打撒打算大苏打撒打算大苏打撒打算大苏打撒打算算</view>
-            <view class="listMain">苏打撒打算大苏打撒打算大苏打撒打算大苏打撒打算苏打撒打算大苏打撒打算大苏打撒打算大苏打撒打算</view>
-            <view class="listTime">
+    <view class="list" id="list">
+        <view class="listbox" tt:for="{{dataList}}">
+            <view class="top">
+                <view class="topleft">
+                    <view class="title">{{item.BG_Title}}</view>
+                    <view class="main">{{item.BG_TS_Content}}</view>
+                </view>
+                <view class="topright" tt:if={{item.BG_Images.length == 1 ? true:false}}>
+                    <image src="{{item.BG_Images[0]}}" mode="" />
+                </view>
+            </view>
+
+            <view class="center" tt:if={{item.BG_Images.length > 1 ? true:false}}>
+                <image src="{{item.BG_Images[0]}}" mode="" />
+                <image src="{{item.BG_Images[1]}}" mode="" />
+                <image src="{{item.BG_Images[2]}}" mode="" />
+            </view>
+
+            <view class="foot">
                 <view class="read">
                     <image src="../../image/read.png" mode="" />
-                    <span>1221<span>
+                    <span>{{item.BG_ViewCount}}<span>
                 </view>
                 <view class="read">
                     <image src="../../image/zhichi.png" mode="" />
-                    <span>1221<span>
+                    <span>{{item.BG_BackUpCount}}<span>
                 </view>
                 <view class="read">
                     <image src="../../image/history.png" mode="" />
-                    <span>1221<span>
+                    <span>{{item.CA_TS_Date}}<span>
                 </view>
             </view>
         </view>
-        <view class="list">
-            <view class="listTit">打算算大苏打撒打算算</view> 
-            <view class="listMain">苏大苏打撒大苏打撒打算</view>
-            <view class="listTime">
-                <view class="read">
-                    <image src="../../image/read.png" mode="" />
-                    <span>1221<span>
-                </view>
-                <view class="read">
-                    <image src="../../image/zhichi.png" mode="" />
-                    <span>1221<span>
-                </view>
-                <view class="read">
-                    <image src="../../image/history.png" mode="" />
-                    <span>1221<span>
-                </view>
-            </view>
-        </view>
-        <view class="foot">
+        <view class="foot1">
             已经到底了!
         </view>
     </view>

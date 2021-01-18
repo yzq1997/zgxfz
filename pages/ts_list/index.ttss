@@ -1,0 +1,144 @@
+#app{
+    background: #F2F2F2;
+    min-height: 100%;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    padding: 40rpx 5%;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+.right>image{
+    width: 100rpx;
+    height: 100rpx;
+}
+.time{
+    display: flex;
+    align-items: center;
+}
+.time>image{
+    width: 32rpx;
+    height: 32rpx;
+}
+.time>span{
+    font-size: 20rpx;
+    color: #999;
+}
+.tit{
+    font-size: 32rpx;
+    display: -webkit-box;             
+    -webkit-box-orient: vertical;     
+    -webkit-line-clamp: 1;            
+    overflow: hidden;       
+}
+.titM{
+    font-size: 28rpx;
+    color: #999;
+    display: -webkit-box;             
+    -webkit-box-orient: vertical;     
+    -webkit-line-clamp: 1;            
+    overflow: hidden;      
+    margin: 10rpx 0; 
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.dcl{
+    position: absolute;
+    font-size: 24rpx;
+    color: #666;
+    top: 32rpx;
+}
+.right1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.right1>image{
+    width: 80rpx;
+    height: 50rpx;
+}
+.cxts{
+    font-size: 24rpx;
+    color: #666;
+    margin-top: 14rpx;
+}
+.cxts1{
+    font-size: 24rpx;
+    color: #eee;
+    margin-top: 14rpx;
+}
+
+.box{
+    background: #F2F2F2;
+    min-height: 100%;
+}
+
+.my{
+    position: fixed;
+    bottom: 0;
+    height: 100rpx;
+    background: #fff;
+    width: 100%;
+}
+.my>span{
+    display: block;
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    margin: 0 auto;
+    background: #BF1213;
+    color: #fff;
+    margin-top: 10rpx;
+}
+
+
+.radio{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #999;
+    opacity: 0.8;
+    z-index: 99999;
+}
+.radiobox{
+    margin: 45% auto;
+    width: 70%;
+    height: 500rpx;
+    background: #fff;
+    opacity: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.radiobox{
+    padding: 30rpx 20rpx 0;
+}
+.radiosbox>span{
+    font-size: 28rpx;
+    
+}
+
+.btnbox{
+    display: flex;
+    justify-content: space-around;
+    height: 100rpx;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+.btnbox>span{
+    font-size: 32rpx;
+    color: #576B95;
+}
