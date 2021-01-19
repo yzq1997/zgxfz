@@ -128,7 +128,6 @@
 }
 .radiosbox>span{
     font-size: 28rpx;
-    
 }
 
 .btnbox{

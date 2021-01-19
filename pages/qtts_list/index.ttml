@@ -18,7 +18,7 @@
     </view>
 
     <view class="list" id="list">
-        <view class="listbox" tt:for="{{dataList}}">
+        <view class="listbox" tt:for="{{dataList}}" bindtap='toArticle' data-alpha-beta="{{item.BG_Code}}">
             <view class="top">
                 <view class="topleft">
                     <view class="title">{{item.BG_Title}}</view>

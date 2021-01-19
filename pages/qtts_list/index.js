@@ -47,6 +47,18 @@ Page({
         });
     },
 
+    toArticle(e) {
+        let id = e.currentTarget.dataset.alphaBeta;
+        tt.reLaunch({
+            url: `../article/index?id=${id}`,
+            success(res) {
+                // console.log(res);
+            },
+            fail(res) {
+                console.log(`reLaunch调用失败`);
+            }
+        }, 200);
+    },
     //获取数据-主体
     getdataMain(newid) {
         let that = this;

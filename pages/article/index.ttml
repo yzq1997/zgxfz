@@ -10,7 +10,7 @@
         </view>
         <view class="two">
             <image src="../../image/case_bq.png" alt="" />  
-            <label>NO.1234568</label>
+            <label>{{detailData.BG_Code}}</label>
         </view>
         <view class="thr">
             <label for="">{{detailData.BG_Title}}</label>
@@ -50,14 +50,14 @@
         <view class="thr">
             <image tt:for="{{supperList.Rows}}"  src="{{item.SS_Photo}}"  alt="" />
         </view>
-        <view class="zlbtn"> 
+        <view class="zlbtn" bindtap="clickImg"> 
             <image src="../../image/zl.png" alt="">
         </view>
     </view>
 </view>
 
 <view class="complainBtn">
-    <view class="complainHim">一起投诉他</view>
+    <view class="complainHim" bindtap="goComplaint">一起投诉他</view>
 </view>
 
 <view class="handleProcess">
@@ -106,7 +106,7 @@
             <view class="fqtscontent" id="tg">
                 <view class="one">
                     <span>{{tsData[1].CP_Users}}</span>
-                    <span>审核通过</span>
+                    <span>{{tsData[1].CP_Comments == '已经受理另外一件' ? '不受理' : '审核通过'}}</span>
                 </view>
                 <view class="two">
                     <view class="title"> {{tsData[1].CP_Comments}}</view>
@@ -119,7 +119,7 @@
             <view class="fqtscontent" id="cs">
                 <view class="one">
                     <span>{{tsData[2].CP_Users}}</span>
-                    <span>投诉撤销</span>
+                    <span>办理结束</span>
                 </view>
                 <view class="two">
                     <view class="title"> {{tsData[2].CP_Comments}}</view>
@@ -129,10 +129,25 @@
     </view>
 </view>
 
-<view class="publishComment">
-    <input type="text" placeholder="发表评论" class="submitComment" />
-    <view class="submit">发送</view>
+<view class="commentBox">
+    <view class="comment">
+        <image src="../../image/comment.png" class="comImg" mode="" />
+        <span class="pinglun">评论</span>
+    </view>
+    <view class="noComment">暂无评论!</view>
 </view>
 
+<view class="publishComment">
+    <input type="text" placeholder="发表评论" bindinput="handleInput" value="{{comments}}" class="submitComment" />
+    <view class="submit" bindtap="submit">发送</view>
+</view>
+
+
+<view class="radio" tt:if={{zlTrue}}>
+    <view class="radiobox">
+        <image src="../../image/fenxiang.png" mode="" />
+        <view class="no" bindtap="noShow">知道了</view>
+    </view>
+</view>
 
   

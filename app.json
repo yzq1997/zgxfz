@@ -11,6 +11,7 @@
         "pages/ts_list/index",
         "pages/article/index",
         "pages/search/index",
+        "pages/search_ts/index",
         "pages/qysq/index"
 
     ],

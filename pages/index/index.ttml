@@ -26,7 +26,7 @@
 
 <!-- 推荐 -->
 <view tt:if={{tab}} class="content">
-    <view class="list" bindtap='toArticle' tt:for="{{DataList}}">
+    <view class="list" bindtap='toArticle' tt:for="{{DataList}}" data-alpha-beta="{{item.BG_Code}}">
         <view class="title">
             <view class="hot">热点</view>
             <view class="tit">{{item.BG_Title}}</view>   
@@ -64,7 +64,7 @@
 
 <!-- 最新 -->
 <view tt:if={{!tab}} class="content">
-    <view class="list" bindtap='toArticle' tt:for="{{DataList}}">
+    <view class="list" bindtap='toArticle' tt:for="{{DataList}}" data-alpha-beta="{{item.BG_Code}}">
         <view class="title">
             <!-- <view class="hot">热点</view> -->
             <view class="zxtit">{{item.BG_Title}}</view>   

@@ -11,7 +11,7 @@
 </view>
 
 <view class="tabO" id="list" tt:if={{tab[0]}}>
-    <view class="listbox" tt:for="{{dataList}}">
+    <view class="listbox" tt:for="{{dataList}}"  bindtap='toArticle' data-alpha-beta="{{item.BG_Code}}">
         <view class="top">
             <view class="topleft">
                 <view class="title">{{item.BG_Title}}</view>
@@ -43,7 +43,7 @@
             </view>
         </view>
     </view>
-    <view class="footer" tt:if={{foot}}>已经没有了哦...</view>
+    <!-- <view class="footer" tt:if={{foot}}>已经没有了哦...</view> -->
 </view>
 
 
@@ -73,11 +73,11 @@
             </view>
         </view>
     </view>
-    <view class="footer" tt:if={{foot}}>已经没有了哦...</view>
+    <!-- <view class="footer" tt:if={{foot}}>已经没有了哦...</view> -->
 </view>
 
 <view class="tabO" id="list" tt:if={{tab[2]}}>
-    <view class="listbox2" tt:for="{{dataList}}">
+    <view class="listbox2" tt:for="{{dataList}}"  bindtap='toArticle' data-alpha-beta="{{item.BG_Code}}">
         <view class="top2">
             <view class="topleft2">
                 <view class="title2">{{item.BG_Title}}</view>

@@ -98,22 +98,20 @@ Page({
             }
         });
     },
-    //点击跳转列表页
-    // toList(e) {
-    //     // console.log(e);
-    //     let id = e.currentTarget.dataset.alphaBeta;
-    //     let newid = e.currentTarget.dataset.alphaBeta1;
-    //     // console.log(id);
-    //     tt.reLaunch({
-    //         url: `../qtts_list/index?id=${id}&newid=${newid}`,
-    //         success(res) {
-    //             // console.log(res);
-    //         },
-    //         fail(res) {
-    //             console.log(`reLaunch调用失败`);
-    //         }
-    //     });
-    // },
+
+    //跳转详情页
+    toArticle(e) {
+        let id = e.currentTarget.dataset.alphaBeta;
+        tt.reLaunch({
+            url: `../article/index?id=${id}`,
+            success(res) {
+                // console.log(res);
+            },
+            fail(res) {
+                console.log(`reLaunch调用失败`);
+            }
+        }, 200);
+    },
 
     //获取数据
     getdata(i) {

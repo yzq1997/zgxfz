@@ -167,7 +167,7 @@ Page({
             dataType: " json", // 指定返回数据的类型为 string
             responseType: "text",
             success(res) {
-                console.log(JSON.parse(JSON.parse(res.data)));
+                // console.log(JSON.parse(JSON.parse(res.data)));
                 // console.log("调用成功", res.data);
                 let arr = JSON.parse(JSON.parse(res.data)).Rows.map((item, index) => {
                     // console.log(item);
@@ -185,7 +185,7 @@ Page({
                     })
                     return item
                 })
-                console.log(arr);
+                // console.log(arr);
                 let c = that.data.dataList.concat(arr)
                 that.setData({
                     dataList:c,
@@ -240,6 +240,19 @@ Page({
         this.setData({
             spot:false
         })
+    },
+    //跳转详情页
+    toArticle(e) {
+        let id = e.currentTarget.dataset.alphaBeta;
+        tt.reLaunch({
+            url: `../article/index?id=${id}`,
+            success(res) {
+                // console.log(res);
+            },
+            fail(res) {
+                console.log(`reLaunch调用失败`);
+            }
+        }, 200);
     },
 
     onShow() {}

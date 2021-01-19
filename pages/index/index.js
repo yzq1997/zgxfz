@@ -13,7 +13,7 @@ Page({
         top: false,
         tsNum: '',  //累计投诉单
         tsPercentage: '', //投诉百分比
-        clo:true,  //企业申请
+        clo: true,  //企业申请
 
     },
     tab1: function () {
@@ -38,7 +38,7 @@ Page({
         });
         this.getNewList(this.data.size);
     },
-    //获取投诉单
+    //获取投诉单数量
     gettsNum() {
         let that = this;
         tt.request({
@@ -64,13 +64,68 @@ Page({
     },
 
     onLoad: function () {
+        tt.setStorageSync('appID', 'tt76ec0051e9d76ae6');
+        tt.setStorageSync('appSecret', 'c085884b4498535a648c2dd7803e0096a254f1b8');
         let that = this;
         that.getTjList(that.data.size);
-        this.gettsNum()
-    },
-    onShow: function () {
+        this.gettsNum();
+        //登录
+        tt.login({
+            force: true,
+            success(res) {
+                // console.log(`login 调用成功${res.code} ${res.anonymousCode}`);
+                // console.log(res);
+                tt.setStorageSync('code', res.code);
+            },
+            fail(res) {
+                console.log(res);
+                // console.log(`login 调用失败`);
+            },
+        });
+
+        //获取code
+        setTimeout(function () {
+            tt.request({
+                url: "https://developer.toutiao.com/api/apps/jscode2session",
+                data: {
+                    appid: 'tt76ec0051e9d76ae6',
+                    secret: 'c085884b4498535a648c2dd7803e0096a254f1b8',
+                    code: tt.getStorageSync('code'),
+                    // anonymous_code: res.anonymousCode
+                },
+                header: {
+                    "content-type": "application/json",
+                },
+                method: "GET",
+                dataType: " json", // 指定返回数据的类型为 string
+                responseType: "text",
+                success(res) {
+                    // console.log(JSON.parse(res.data));
+                    tt.setStorageSync('openid', JSON.parse(res.data).openid);
+                },
+                fail(res) {
+                    console.log("调用失败", res.errMsg);
+                },
+            });
+        }, 500);
+
+        //获取用户信息
+        tt.getUserInfo({
+            withCredentials: true,
+            success(res) {
+                // console.log(JSON.parse(res.rawData));
+                tt.setStorageSync('avatarUrl', JSON.parse(res.rawData).avatarUrl);
+                tt.setStorageSync('nickName', JSON.parse(res.rawData).nickName);
+
+                // console.log(`getUserInfo 调用成功 ${res.userInfo}`);
+            },
+            fail(res) {
+                console.log(`getUserInfo 调用失败`);
+            },
+        });
 
     },
+    onShow: function () { },
 
     getTjList: function (e) {
         let that = this;
@@ -90,6 +145,7 @@ Page({
                 PageSize: e
             },
             success(res) {
+                // console.log(JSON.parse(JSON.parse(res.data)));
                 that.TotalCount = JSON.parse(JSON.parse(res.data)).TotalCount;
                 if (res.statusCode == 200) {
                     let DataList = JSON.parse(JSON.parse(res.data)).Rows.map((item, index) => {
@@ -109,7 +165,7 @@ Page({
                         }
                         return item;
                     })
-                    console.log(DataList)
+                    // console.log(DataList)
                     if (DataList.length == that.TotalCount && that.TotalCount != 0) {
                         that.setData({
                             DataList: DataList,
@@ -192,9 +248,10 @@ Page({
     },
 
     //跳转详情页
-    toArticle() {
+    toArticle(e) {
+        let id = e.currentTarget.dataset.alphaBeta;
         tt.reLaunch({
-            url: `../article/index?sky=${this.data.num}`,
+            url: `../article/index?id=${id}`,
             success(res) {
                 // console.log(res);
             },
@@ -205,7 +262,7 @@ Page({
     },
 
     //跳转搜索页面
-    goSearch(){
+    goSearch() {
         tt.reLaunch({
             url: `../search/index`,
             success(res) {
@@ -258,7 +315,7 @@ Page({
     },
 
     //企业申请
-    enterprise(){
+    enterprise() {
         tt.reLaunch({
             url: `../qysq/index`,
             success(res) {
@@ -269,9 +326,9 @@ Page({
             }
         });
     },
-    close(){
+    close() {
         this.setData({
-            clo:false
+            clo: false
         })
     }
 })

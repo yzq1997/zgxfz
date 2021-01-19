@@ -1,11 +1,13 @@
 {
     "setting": {
-        "urlCheck": true,
+        "autoCompile": true,
         "es6": true,
-        "postcss": true,
-        "minified": true,
-        "newFeature": true
+        "minified": false,
+        "mockUpdate": false,
+        "newFeature": false,
+        "postcss": false,
+        "urlCheck": false
     },
-    "appid": "testAppId",
+    "appid": "tt76ec0051e9d76ae6",
     "projectname": "zb"
 }

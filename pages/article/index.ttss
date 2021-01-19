@@ -38,7 +38,8 @@
 
 .jcinfo{
     width: 690rpx;
-    height: 353rpx;
+    /* height: 400rpx; */
+    padding-bottom: 30rpx;
     margin: 0 auto;
     background-color: #FFFFFF;
     margin-top: 18rpx;
@@ -112,6 +113,7 @@
     color: #333333;
 }
 
+
 .help{
     width: 690rpx;
     height: 204rpx;
@@ -167,7 +169,7 @@
 }
 .help .zlbtn>image{
     width: 120rpx;
-height: 100rpx;
+    height: 120rpx;
 }
 
 .process{
@@ -218,6 +220,7 @@ height: 100rpx;
     overflow: hidden;
     background-color: #FFFFFF;
     margin-top: 20rpx;
+    padding-bottom: 20rpx;
 }
 .process .content>.fqts .fqtscontent .one{
     width: 565rpx;
@@ -260,7 +263,7 @@ height: 100rpx;
 }
  
 .process .content>.fqts .fqtscontent .two .tsimg{
-    width: calc(100% - 84px);
+    width: calc(100% - 35px);
     overflow: hidden;
     margin-left: 42rpx;
     margin-bottom: 40rpx;
@@ -348,8 +351,59 @@ height: 100rpx;
     flex: 0.18;
     text-align: center;
 }
+.commentBox{
+    width: 100%;
+    background: #fff;
+    height: 180rpx;
+    padding: 30rpx;
+}
+.comment{
+    border-bottom: 1px solid #eee;
+}
+.pinglun{
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+.noComment{
+    text-align: center;
+    color: #999;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    padding-top: 30rpx;
+}
+.comImg{
+    width: 30rpx;
+    height: 30rpx;
+}
 
-
-
-
+.radio{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: 0.8;
+    z-index: 99999;
+}
+.radiobox{
+    margin: 0 auto;
+    width: 100%;
+    height: 700rpx;
+    /* background: #fff; */
+    /* opacity: 1; */
+    /* border-radius: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.radiobox>image{
+    width: 100%;
+    height: 400rpx;
+}
+.no{
+    padding: 20rpx 40rpx;
+    border: 2px solid #fff;
+    color: #fff;
+}
 

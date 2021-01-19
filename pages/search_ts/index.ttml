@@ -1,0 +1,362 @@
+<view class="box">
+    
+    <view class="" tt:if={{tab1}}>
+        <view class="userdata">基本信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">购买平台<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm1" type="text" value="{{interGMPT}}" placeholder="请输入购买平台"/>
+            </view>
+            <view class="gmpt">
+                <span class="">店铺名称<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm2" type="text" value="{{interDPMC}}" placeholder="请输入店铺名称"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">店铺形式<span class="bx">*</span></span>
+                <picker
+                    value="{{index1}}"
+                    range="{{array1}}"
+                    bindchange="bindPickerChange1"
+                    bindcancel="bindPickerCancel1"
+                >
+                    <view class="picker">{{array1[index1]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">购买渠道<span class="bx">*</span></span>
+                <picker
+                    value="{{index2}}"
+                    range="{{array2}}"
+                    bindchange="bindPickerChange2"
+                    bindcancel="bindPickerCancel2"
+                >
+                    <view class="picker">{{array2[index2]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">订单号码<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm3" type="text" value="{{interDDHM}}" placeholder="请输入订单号或账号"/>
+            </view>
+            <view class="gmpt">
+                <span class="">联系电话<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm4" type="number" value="{{interLXDH}}" placeholder="请输入企业联系电话"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">行业类型<span class="bx">*</span></span>
+                <picker
+                    value="{{index5_1}}"
+                    range="{{array5_1}}"
+                    bindchange="bindPickerChange5_1"
+                    bindcancel="bindPickerCancel5_1"
+                >
+                    <view class="picker">{{array5_1[index5_1]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+        </view>
+
+        <view class="userdata">投诉信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">品牌</span>
+                <input class="input1" bindinput ="handleConfirm5" type="text" value="{{interPP}}" placeholder="请输入品牌"/>
+            </view>
+            <view class="gmpt">
+                <span class="">型号</span>
+                <input class="input1" bindinput ="handleConfirm6" type="text" value="{{interXH}}" placeholder="请输入型号"/>
+            </view>
+            <view class="gmpt">
+                <span class="">涉及金额<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm7" type="number" value="{{interSJJE}}" placeholder="请输入涉及金额"/>
+            </view>
+        </view>
+
+        <view class="userdata">投诉内容<span class="bx">*</span>(请保护个人隐私，如手机号等)</view>
+        <view class="userBox">
+            <textarea
+                class="textarea"
+                bindfocus="onTextFocus"
+                bindblur ="onTextBlur"
+                bindinput="onTextInput"
+                bindconfirm="onTextConfirm"
+                placeholder="请输入您想投诉的内容"
+                value="{{interTSNR}}"
+            />
+        </view>
+
+        <view class="userdata">投诉诉求<span class="bx">*</span></view>
+        <view class="tsbox">
+            <button class="{{btn1? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn1'>退款</button>
+            <button class="{{btn2? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn2'>换货</button>
+            <button class="{{btn3? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn3'>赔款</button>
+            <button class="{{btn4? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn4'>曝光</button>
+        </view>
+
+        <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
+        <view class="photo">
+            <button bindtap="chooseImage" class="photobtn">选择图片</button>
+            <view class="imgbox">
+                <image src="{{item.path}}">12</image>
+            </view>
+        </view>
+
+        <view class="userdata">身份验证</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">姓名<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm8" type="text" value="{{interXM}}" placeholder="请输入您的姓名"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">性别<span class="bx">*</span></span>
+                <picker
+                    value="{{index4}}"
+                    range="{{array4}}"
+                    bindchange="bindPickerChange4"
+                    bindcancel="bindPickerCancel4"
+                >
+                    <view class="picker">{{array4[index4]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">手机号码<span class="bx">*</span></span>
+                <input class="input1 phone1" bindinput="handleConfirm9" value="{{interSJHM}}" placeholder="请输入手机号码"/>
+                <button class="yzm" bindtap='getnum1'>{{getnum1}}</button>
+            </view>
+            <view class="gmpt">
+                <span class="yzmnum">验证码<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm10" type="text" value="{{interYZM}}" placeholder="请输入验证码"/>
+            </view>
+        </view>
+
+        <button type="default" class="submit" bindtap="setTsO">提交投诉</button>
+    </view>
+
+    <view class="" tt:if={{tab2}}>
+        <view class="userdata">基本信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">企业名称<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm11" type="text" value="{{storeQYMC}}" placeholder="请输入企业名称"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">企业地址<span class="bx">*</span></span>
+                <picker
+                    mode="region"
+                    bindchange="bindMultiPickerChange"
+                    value="{{multiIndex}}"
+                    range="{{multiArray}}"
+                >
+                    <view class="picker">{{multiIndex[0]}},{{multiIndex[1]}},{{multiIndex[2]}}</view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">详细地址<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm12" type="text" value="{{storeXXDZ}}" placeholder="请输入详细地址"/>
+            </view>
+            <view class="gmpt">
+                <span class="">联系电话<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm13" type="number" value="{{storeLXDH}}" placeholder="请输入企业联系电话"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">行业类型<span class="bx">*</span></span>
+                <picker
+                    value="{{index5}}"
+                    range="{{array5}}"
+                    bindchange="bindPickerChange5"
+                    bindcancel="bindPickerCancel5"
+                >
+                    <view class="picker">{{array5[index5]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+        </view>
+
+        <view class="userdata">投诉信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">品牌</span>
+                <input class="input1" bindinput ="handleConfirm14" type="text" value="{{storePP}}" placeholder="请输入品牌"/>
+            </view>
+            <view class="gmpt">
+                <span class="">型号</span>
+                <input class="input1" bindinput ="handleConfirm15" type="text" value="{{storeXH}}" placeholder="请输入型号"/>
+            </view>
+            <view class="gmpt">
+                <span class="">涉及金额<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm16" type="number" value="{{storeSJJE}}" placeholder="请输入涉及金额"/>
+            </view>
+        </view>
+
+        <view class="userdata">投诉内容<span class="bx">*</span>(请保护个人隐私，如手机号等)</view>
+        <view class="userBox">
+            <textarea
+                class="textarea"
+                bindfocus="onTextFocus1"
+                bindblur ="onTextBlur1"
+                bindinput="onTextInput1"
+                bindconfirm="onTextConfirm1"
+                placeholder="请输入您想投诉的内容"
+                value="{{storeTSNR}}"
+            />
+        </view>
+
+        <view class="userdata">投诉诉求<span class="bx">*</span></view>
+        <view class="tsbox">
+            <button class="{{btn5? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn5'>退款</button>
+            <button class="{{btn6? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn6'>换货</button>
+            <button class="{{btn7? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn7'>赔款</button>
+            <button class="{{btn8? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn8'>曝光</button>
+        </view>
+
+        <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
+        <view class="photo">
+            <button bindtap="chooseImage" class="photobtn">选择图片</button>
+            <view class="imgbox">
+                <image src="{{item.path}}" />
+            </view>
+        </view>
+
+        <view class="userdata">身份验证</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">姓名<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm17" type="text" value="{{storeXM}}" placeholder="请输入您的姓名"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">性别<span class="bx">*</span></span>
+                <picker
+                    value="{{index6}}"
+                    range="{{array6}}"
+                    bindchange="bindPickerChange6"
+                    bindcancel="bindPickerCancel6"
+                >
+                    <view class="picker">{{array6[index6]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">手机号码<span class="bx">*</span></span>
+                <input class="input1 phone1" bindinput ="handleConfirm18" type="number" value="{{storeSJHM}}" placeholder="请输入手机号码"/>
+                <button class="yzm" bindtap='getnum2'>{{getnum2}}</button>
+            </view>
+            <view class="gmpt">
+                <span class="yzmnum">验证码<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm19" type="text" value="{{storeYZM}}" placeholder="请输入验证码"/>
+            </view>
+        </view>
+
+        <button type="default" class="submit">提交投诉</button>
+    </view>
+
+    <view class="" tt:if={{tab3}}>
+        <view class="userdata">基本信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="yzmnum">电视台<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm20" type="text" value="{{tvDST}}" placeholder="请输入电视台"/>
+            </view>
+            <view class="gmpt">
+                <span class="">节目名称<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm21" type="text" value="{{tvJMMC}}" placeholder="请输入电视台"/>
+            </view>
+            <view class="gmpt">
+                <span class="">联系电话<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm22" type="number" value="" placeholder="请输入企业联系电话"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">行业类型<span class="bx">*</span></span>
+                <picker
+                    value="{{index7}}"
+                    range="{{array7}}"
+                    bindchange="bindPickerChange7"
+                    bindcancel="bindPickerCancel7"
+                >
+                    <view class="picker">{{array7[index7]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+        </view>
+
+        <view class="userdata">投诉信息</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">品牌</span>
+                <input class="input1" bindinput ="handleConfirm23" type="text" value="{{tvPP}}" placeholder="请输入品牌"/>
+            </view>
+            <view class="gmpt">
+                <span class="">型号</span>
+                <input class="input1" bindinput ="handleConfirm24" type="text" value="{{tvXH}}" placeholder="请输入型号"/>
+            </view>
+            <view class="gmpt">
+                <span class="">涉及金额<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm25" bindinput ="handleConfirm1" type="number" value="" placeholder="请输入涉及金额"/>
+            </view>
+        </view>
+
+        <view class="userdata">投诉内容<span class="bx">*</span>(请保护个人隐私，如手机号等)</view>
+        <view class="userBox">
+            <textarea
+                class="textarea"
+                bindfocus="onTextFocus2"
+                bindinput ="onTextBlur2"
+                bindinput="onTextInput2"
+                bindinput="onTextConfirm2"
+                placeholder="请输入您想投诉的内容"
+            />
+        </view>
+
+        <view class="userdata">投诉诉求<span class="bx">*</span></view>
+        <view class="tsbox">
+            <button class="{{btn9? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn9'>退款</button>
+            <button class="{{btn10? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn10'>换货</button>
+            <button class="{{btn11? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn11'>赔款</button>
+            <button class="{{btn12? 'tybtn' : 'ts_btn'}}" type="default" bindtap='ts_btn12'>曝光</button>
+        </view>
+
+        <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
+        <view class="photo">
+            <button bindtap="chooseImage" class="photobtn">选择图片</button>
+            <view class="imgbox">
+                <image src="{{item.path}}" />
+            </view>
+        </view>
+
+        <view class="userdata">身份验证</view>
+        <view class="userBox">
+            <view class="gmpt">
+                <span class="">姓名<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm26" type="text" value="" placeholder="请输入您的姓名"/>
+            </view>
+            <view class="gmpt dpxs">
+                <span class="">性别<span class="bx">*</span></span>
+                <picker
+                    value="{{index6}}"
+                    range="{{array6}}"
+                    bindchange="bindPickerChange6"
+                    bindcancel="bindPickerCancel6"
+                >
+                    <view class="picker">{{array6[index6]}} </view>
+                </picker>
+                <image src="../../image/right.png" mode="" />
+            </view>
+            <view class="gmpt">
+                <span class="">手机号码<span class="bx">*</span></span>
+                <input class="input1 phone1" bindinput ="handleConfirm27" type="number" value="" placeholder="请输入手机号码"/>
+                <button class="yzm" bindtap='getnum3'>{{getnum3}}</button>
+            </view>
+            <view class="gmpt">
+                <span class="yzmnum">验证码<span class="bx">*</span></span>
+                <input class="input1" bindinput ="handleConfirm28" type="text" value="" placeholder="请输入验证码"/>
+            </view>
+        </view>
+
+        <button type="default" class="submit">提交投诉</button>
+    </view>
+</view>
+
+
+
