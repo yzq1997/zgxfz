@@ -110,22 +110,47 @@
 .photo{
     display: flex;
     padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    overflow-x: auto;
 }
 .photobtn{
     width: 200rpx;
     height: 200rpx;
-    background: pink;
+    /* background: pink; */
     padding:0;
     margin: 0;
+    text-align: center;
+    font-size: 80rpx;
+    line-height: 200rpx;
+    color: #999;
 }
 .imgbox{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .imgbox>image{
     width: 200rpx;
     height: 200rpx;
     padding: 0;
+}
+.qxsc{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30rpx;
+    height: 30rpx;
+}
+.qxsc>image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.map{
+    margin-left: 60rpx;
+}
+.map>image{
+    width: 30rpx;
+    height: 40rpx;
 }
 .phone1{
     width: 35%;

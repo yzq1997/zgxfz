@@ -12,7 +12,9 @@
         "pages/article/index",
         "pages/search/index",
         "pages/search_ts/index",
-        "pages/qysq/index"
+        "pages/qysq/index",
+        "pages/shangchuang/index",
+        "pages/map/index"
 
     ],
     "window": {
@@ -31,7 +33,7 @@
             },
             {
                 "text": "群体投诉",
-                "pagePath": "pages/qtts/index",
+                "pagePath": "pages/map/index",
                 "iconPath": "./image/qtts1.png",
                 "selectedIconPath": "./image/qtts.png"
             },
@@ -43,7 +45,7 @@
             },
             {
                 "text": "品牌投诉",
-                "pagePath": "pages/ppts/index",
+                "pagePath": "pages/shangchuang/index",
                 "iconPath": "./image/ppts1.png",
                 "selectedIconPath": "./image/ppts.png"
             },

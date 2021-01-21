@@ -53,7 +53,7 @@ Page({
         tt.reLaunch({
             url: `../ts_data/index?sky=${this.data.num1}`,
             success(res) {
-                console.log(res);
+                // console.log(res);
             },
             fail(res) {
                 console.log(`reLaunch调用失败`);
@@ -71,7 +71,7 @@ Page({
         tt.reLaunch({
             url: `../ts_data/index?sky=${this.data.num2}`,
             success(res) {
-                console.log(res);
+                // console.log(res);
             },
             fail(res) {
                 console.log(`reLaunch调用失败`);
@@ -89,7 +89,7 @@ Page({
         tt.reLaunch({
             url: `../ts_data/index?sky=${this.data.num3}`,
             success(res) {
-                console.log(res);
+                // console.log(res);
             },
             fail(res) {
                 console.log(`reLaunch调用失败`);

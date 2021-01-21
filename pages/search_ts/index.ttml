@@ -96,9 +96,12 @@
 
         <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
         <view class="photo">
-            <button bindtap="chooseImage" class="photobtn">选择图片</button>
-            <view class="imgbox">
-                <image src="{{item.path}}">12</image>
+            <button bindtap="chooseImage" class="photobtn">+</button>
+            <view class="imgbox" tt:for="{{imageList}}">
+                <image src="{{item.path}}"></image>
+                <view class="qxsc" bindtap="closetp" data-alpha-beta="{{index}}">
+                    <image src="../../image/qxsc.png" mode="" />
+                </view>
             </view>
         </view>
 
@@ -214,9 +217,12 @@
 
         <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
         <view class="photo">
-            <button bindtap="chooseImage" class="photobtn">选择图片</button>
-            <view class="imgbox">
+            <button bindtap="chooseImage1" class="photobtn">+</button>
+            <view class="imgbox" tt:for="{{imageList1}}">
                 <image src="{{item.path}}" />
+                <view class="qxsc" bindtap="closetp1" data-alpha-beta="{{index}}">
+                    <image src="../../image/qxsc.png" mode="" />
+                </view>
             </view>
         </view>
 
@@ -249,7 +255,7 @@
             </view>
         </view>
 
-        <button type="default" class="submit">提交投诉</button>
+        <button type="default" class="submit" bindtap="setTsT">提交投诉</button>
     </view>
 
     <view class="" tt:if={{tab3}}>
@@ -319,9 +325,12 @@
 
         <view class="userdata">建议上传发票或小票等凭证、实物照片</view>
         <view class="photo">
-            <button bindtap="chooseImage" class="photobtn">选择图片</button>
-            <view class="imgbox">
+            <button bindtap="chooseImage2" class="photobtn">+</button>
+            <view class="imgbox" tt:for="{{imageList2}}">
                 <image src="{{item.path}}" />
+                <view class="qxsc" bindtap="closetp2" data-alpha-beta="{{index}}">
+                    <image src="../../image/qxsc.png" mode="" />
+                </view>
             </view>
         </view>
 
@@ -334,10 +343,10 @@
             <view class="gmpt dpxs">
                 <span class="">性别<span class="bx">*</span></span>
                 <picker
-                    value="{{index6}}"
-                    range="{{array6}}"
-                    bindchange="bindPickerChange6"
-                    bindcancel="bindPickerCancel6"
+                    value="{{index6_1}}"
+                    range="{{array6_1}}"
+                    bindchange="bindPickerChange6_1"
+                    bindcancel="bindPickerCancel6_1"
                 >
                     <view class="picker">{{array6[index6]}} </view>
                 </picker>
@@ -354,7 +363,7 @@
             </view>
         </view>
 
-        <button type="default" class="submit">提交投诉</button>
+        <button type="default" class="submit" bindtap="setTsS">提交投诉</button>
     </view>
 </view>
 

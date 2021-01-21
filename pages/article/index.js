@@ -39,7 +39,7 @@ Page({
                 Code: id
             },
             success(res) {
-                // console.log(JSON.parse(JSON.parse(res.data)))
+                console.log(JSON.parse(JSON.parse(res.data)))
                 if (res.statusCode == 200) {
                     that.setData({
                         detailData: JSON.parse(JSON.parse(res.data))

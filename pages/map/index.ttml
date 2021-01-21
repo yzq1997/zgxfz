@@ -1,0 +1,28 @@
+<view class="box">
+    <view class="input">
+        <view class="search">
+            <image src="../../image/search.png" mode="" />
+        </view>
+        <input
+            class="page-input"
+            placeholder="请输入关键词"
+            bindinput="bindinput"
+            value="{{address}}"
+        />
+        <button class="btn" bindtap="search">搜索</button>
+    </view>
+    <!-- -->
+    <map
+        id="myMap"
+        show-location
+        longitude="{{longitude}}"
+        latitude="{{latitude}}"
+        markers="{{markers}}"
+        scale="{{scale}}"
+        bindtap="maptap"
+        bindregionchange="regionchange"
+        style="width:100%; height: 100%;"
+    ></map>
+      
+</view>
+

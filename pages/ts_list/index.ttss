@@ -141,3 +141,13 @@
     font-size: 32rpx;
     color: #576B95;
 }
+
+.qita{
+    font-size: 28rpx;
+    color: #BF1213;
+    border: 1px solid red;
+    width: 100%;
+    height: 100rpx;
+    margin-top: 10rpx;
+    /* margin-bottom: 10rpx; */
+}

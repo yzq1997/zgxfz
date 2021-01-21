@@ -138,7 +138,7 @@ Page({
             dataType: " json", // 指定返回数据的类型为 string
             responseType: "text",
             data: {
-                OpenId: '',
+                OpenId: tt.getStorageSync('openid'),
                 AppId: 'wxb06bbaf1ed1d5322',
                 ProviceName: '',
                 PageNum: 0,

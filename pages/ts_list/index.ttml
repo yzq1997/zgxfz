@@ -1,43 +1,24 @@
 <view class="box">
-    <view class="list">
+    <view class="list" tt:for="{{arr}}">
         <view class="left">
-            <view class="tit">图</view>
-            <view class="titM">撒打算</view>
+            <view class="tit">{{item.CA_TS_EntityName}}</view>
+            <view class="titM">{{item.CA_TS_Content}}</view>
             <view class="time">
                 <image src="../../image/history.png" mode="" />
-                <span>2020-20-20</span>
+                <span>{{item.CA_TS_Date}}</span>
             </view>
         </view>
-        <view class="right" tt:if={{flag}}>
+        <view class="right" tt:if={{item.IS_UserRevoke == 0 ? true : false}}>
             <image src="../../image/circle.png" mode="" />
-            <view class="cxts" bindtap="chexiao">撤销投诉</view>
+            <view class="cxts" bindtap="chexiao" data-alpha-beta="{{item.CA_Code}}">撤销投诉</view>
             <view class="dcl">待处理</view>
         </view>
-        <view class="right1" tt:if={{!flag}}>
+        <view class="right1" tt:if={{item.IS_UserRevoke == 1 ? true : false}}>
             <image src="../../image/havRevoke.png" mode="" />
             <view class="cxts1">已撤回</view>
         </view>
     </view>
 
-    <view class="list">
-        <view class="left">
-            <view class="tit">图</view>
-            <view class="titM">撒打算</view>
-            <view class="time">
-                <image src="../../image/history.png" mode="" />
-                <span>2020-20-20</span>
-            </view>
-        </view>
-        <view class="right" tt:if={{!flag}}>
-            <image src="../../image/circle.png" mode="" />
-            <view class="cxts">撤销投诉</view>
-            <view class="dcl">待处理</view>
-        </view>
-        <view class="right1" tt:if={{flag}}>
-            <image src="../../image/havRevoke.png" mode="" />
-            <view class="cxts1">已撤回</view>
-        </view>
-    </view>
     <view class="my">
         <span bindtap='toList'>我要投诉</span>
     </view>
@@ -68,6 +49,16 @@
         <view class="radiosbox">
             <radio value="ds" checked={{flag6}} bindtap='rad6'/>
             <span>其他</span>
+        </view>
+        <view class="" tt:if={{flag6}}>
+            <textarea
+                class="qita"
+                bindfocus="onTextFocus"
+                bindblur="onTextBlur"
+                bindinput="onTextInput"
+                bindconfirm="onTextConfirm"
+                placeholder="请输入"
+            />
         </view>
         <view class="btnbox">
             <span bindtap="showT">确定</span>

@@ -1,0 +1,64 @@
+<view class="container">
+    <view class="title">用户反馈</view>
+        <form class="form"  bindsubmit="formSubmit"
+                            bindreset="formReset"
+                            report-submit="true"
+                            report-type="subscribe"
+                            subscribe-id="food"
+                            template-id="BD0001">
+            <view class="question">
+                <view class="pass pass1">
+                    <view class="ques_title">您遇到了什么问题</view>
+                    <radio-group name="radio-group" class="ques_ul">
+                        <label class="items"><radio value="radio1" checked/>答案文不对题或明显错误</label>
+                        <label class="items"><radio value="radio2"/>答案不算错但是不全面</label>
+                        <label class="items"><radio value="radio3"/>答案文不对题或明显错误</label>
+                        <label class="items"><radio value="radio4"/>答案不算错但是不全面</label>
+                        <label class="items"><radio value="radio5"/>答案文不对题或明显错误</label>
+                    </radio-group>
+                </view>
+                <view class="pass pass2">
+                    <view class="ques_title">您遇到的问题具体是什么?</view>
+                    <view class="pass2_textarea">
+                        <textarea style="height: 6em;font-size: 14px;"
+                                  maxlength="-1"
+                                  auto-focus="{{focus}}"
+                                  cursor="-1" show-confirm-bar="true"
+                                  placeholder="您遇到的问题具体是什么?"
+                                  placeholder-class="plh"
+                                  selection-start="-1"
+                                  selection-end="-1"
+                                  adjust-position="true"
+                                  bindinput="bindInput"
+                                  bindfocus="bindFocus"
+                                  bindblur="bindBlur"
+                                  bindlinechange="bindLineChange"
+                                  bindconfirm="bindConfirm"
+                                  class="textarea_input textarea_text"
+                        />
+                        <view class="textarea-remind"><text class="textarea-text-cur" id="text-count">{{ textareanumber }}</text>/300</view>
+                    </view>
+                    <view class="addpic">
+                        <view class="addbutton"  bindtap="selectImage">+</view>
+                        <view s-if="{{imageList.length > 0 ? true : false}}" class="image-container">
+                            <view class="imageList" s-for="{{ imageList }}">
+                                <view class="delpic"  data-index="{{ index }}" bindtap="delpic">
+                                    <image src="/images/delete@2x.png"></image>
+                                </view>
+                                <image class="image-items" src="{{ item }}" data-src="{{ item }}"></image>
+                            </view>
+                        </view>
+                        <view s-else class="addtip" >
+                            <view class="addtip_text">上传图片，最多四张</view>
+                            <view class="addtip_text">图片小于2M</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="pass  pass3">
+                    <view class="ques_title">您的联系方式是什么？</view>
+                    <input type="text" class="ipt" cursor='10' bindblur="bindKeyblur"  bindconfirm="bindKeyconfirm" placeholder="请留下邮箱或电话，使我们快速反馈"/>
+                </view>
+                <button class="tel_input" formType="submit" type="primary">提交</button>
+            </view>
+        </form>
+</view>
